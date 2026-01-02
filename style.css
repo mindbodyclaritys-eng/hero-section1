@@ -1,0 +1,102 @@
+.hero {
+    min-height: 100vh;
+    /* Gradient + Oceanic Luxury Overlay */
+    background: 
+        linear-gradient(
+            145deg,
+            rgba(10, 31, 68, 0.9), /* deep navy */
+            rgba(13, 59, 102, 0.7)  /* ocean blue */
+        ),
+        url("images/sea.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle animated shimmer for luxury feel */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05), transparent 70%);
+    animation: shimmer 15s linear infinite;
+}
+
+
+
+.hero h3 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.hero h4 {
+    font-size: 26px;
+    margin-top: 12px;
+    font-weight: 300;
+    color: #dbe4f0;
+}
+
+/* Smooth slide feel */
+.carousel-item {
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.carousel-item-next,
+.carousel-item-prev,
+.carousel-item.active {
+    display: block;
+}
+
+/* Button beauty */
+.hero .btn-primary {
+    background: linear-gradient(135deg, #cfae70, #e6c88c);
+    border: none;
+    color: #0a1f44;
+    padding: 12px 32px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.hero .btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(207, 174, 112, 0.4);
+    background: #cfae70 !important; /* important added */
+    color: #0a1f44;
+}
+
+
+/* Image floating */
+.hero img {
+    width: 100%;
+    animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translate(0); }
+    50% { transform: translateY(-18px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes shimmer {
+    0% { transform: rotate(0deg) translate(0,0); }
+    50% { transform: rotate(180deg) translate(50px, 50px); }
+    100% { transform: rotate(360deg) translate(0,0); }
+}
+/* Mobile friendly */
+@media (max-width: 768px) {
+    .hero {
+        text-align: center;
+    }
+    .hero h3 {
+        font-size: 36px;
+    }
+    .hero h4 {
+        font-size: 20px;
+    }
+}
