@@ -7,6 +7,7 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 /* =========================
    NAVBAR BASE
 ========================= */
@@ -21,6 +22,7 @@
   position: sticky;
   top: 0;
   z-index: 999;
+  animation: navFadeDown 0.8s ease forwards;
 }
 
 /* logo */
@@ -30,21 +32,17 @@
   font-weight: bold;
 }
 
-/* nav links */
+/* =========================
+   NAV LINKS (DESKTOP DEFAULT)
+========================= */
 .nav-links {
   list-style: none;
   display: flex;
   gap: 30px;
   align-items: center;
-  padding-left: 0;
   margin-top: 20px;
-   max-height: 0;        /* start collapsed */
-  overflow: hidden;     /* hide content */
-  transition: max-height 0.5s ease; /* smooth slide */
 }
-.nav-links.show {
-  max-height: 500px; /* adjust according to menu height */
-}
+
 .nav-links li {
   display: flex;
   align-items: center;
@@ -72,14 +70,10 @@
   transition: width 0.3s ease;
 }
 
-/* hover */
 .nav-links a:hover::after,
 .nav-links a.active::after {
   width: 100%;
 }
-
-/* active link */
-
 
 /* contact button */
 .nav-btn {
@@ -95,23 +89,6 @@
   background-color: #ffffff;
 }
 
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
-}
-
-.menu-toggle span {
-  transition: all 0.3s ease;
-}
-
-
 /* =========================
    HAMBURGER
 ========================= */
@@ -126,15 +103,24 @@
   width: 25px;
   background: #fff;
   margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* =========================
-   NAVBAR ANIMATION (ON LOAD)
+   NAVBAR ANIMATION
 ========================= */
-.custom-navbar {
-  animation: navFadeDown 0.8s ease forwards;
-}
-
 @keyframes navFadeDown {
   from {
     opacity: 0;
@@ -146,10 +132,64 @@
   }
 }
 
+/* =========================
+   MOBILE NAVBAR (FIXED)
+========================= */
+@media (max-width: 1150px) {
+
+  /* hide desktop nav links */
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #0a1a2f;
+    flex-direction: column;
+    gap: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .nav-links.show {
+    max-height: 600px;
+  }
+
+  /* show hamburger earlier */
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links a {
+    height: 60px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-btn {
+    margin: 15px 0;
+  }
+}
 
 /* =========================
-   MOBILE RESPONSIVE
+   DESKTOP ONLY (1151px+)
 ========================= */
+@media (min-width: 1151px) {
+
+  .nav-links {
+    display: flex;
+    position: static;
+    max-height: none;
+    overflow: visible;
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .custom-navbar {
     padding: 0 30px;
@@ -167,11 +207,13 @@
     background: #0a1a2f;
     flex-direction: column;
     gap: 0;
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
   }
 
   .nav-links.show {
-    display: flex;
+    max-height: 600px; /* CONTACT US FIX */
   }
 
   .nav-links a {
@@ -185,9 +227,8 @@
   }
 }
 
-
 /* =========================
-   PREMIUM HERO SECTION
+   HERO SECTION
 ========================= */
 .hero {
   min-height: 100vh;
@@ -199,7 +240,6 @@
       rgba(10, 45, 95, 0.55),
       rgba(15, 85, 155, 0.45)),
     url("images/sea.jpg") center / cover no-repeat;
-
   display: flex;
   align-items: center;
   position: relative;
@@ -211,15 +251,17 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(120deg,
-      transparent 40%,
-      rgba(255, 255, 255, 0.06),
-      transparent 60%);
+  background: linear-gradient(
+    120deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.06),
+    transparent 60%
+  );
   animation: lightMove 10s ease-in-out infinite;
   pointer-events: none;
 }
 
-/* grain texture */
+/* grain */
 .hero::after {
   content: "";
   position: absolute;
@@ -230,7 +272,7 @@
 }
 
 /* =========================
-   TEXT STYLE
+   HERO TEXT
 ========================= */
 .hero h3 {
   font-size: 52px;
@@ -249,9 +291,7 @@
   color: #d8e3f2;
 }
 
-/* =========================
-   GLASS CARD
-========================= */
+/* glass card */
 .hero .col-md-6.text-white {
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(14px);
@@ -260,9 +300,7 @@
   box-shadow: 0 40px 80px rgba(0, 0, 0, 0.45);
 }
 
-/* =========================
-   PREMIUM BUTTON
-========================= */
+/* button */
 .hero .btn-primary {
   background: linear-gradient(135deg, #cfae70, #f5deb3);
   border: none;
@@ -271,25 +309,7 @@
   border-radius: 60px;
   font-weight: 600;
   letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.hero .btn-primary::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  left: -100%;
-  background: linear-gradient(120deg,
-      transparent,
-      rgba(255, 255, 255, 0.5),
-      transparent);
-  transition: left 0.6s ease;
-}
-
-.hero .btn-primary:hover::before {
-  left: 100%;
 }
 
 .hero .btn-primary:hover {
@@ -297,109 +317,47 @@
   box-shadow: 0 18px 40px rgba(207, 174, 112, 0.45);
 }
 
-/* =========================
-   FLOATING IMAGE
-========================= */
+/* image */
 .hero img {
-  width: 100%;
+  width: 120%;
   max-width: 650px;
   filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.6));
   animation: floatPremium 6s ease-in-out infinite;
 }
 
 @keyframes floatPremium {
-  0% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-22px);
-  }
-
-  100% {
-    transform: translateY(0);
-  }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-22px); }
+  100% { transform: translateY(0); }
 }
 
-/* =========================
-   ANIMATION
-========================= */
 @keyframes lightMove {
-  0% {
-    transform: translateX(-20%);
-  }
-
-  50% {
-    transform: translateX(20%);
-  }
-
-  100% {
-    transform: translateX(-20%);
-  }
+  0% { transform: translateX(-20%); }
+  50% { transform: translateX(20%); }
+  100% { transform: translateX(-20%); }
 }
 
 /* =========================
-   MOBILE VIEW
+   HERO MOBILE
 ========================= */
-
 /* =========================
-   MID-SIZE SCREENS (1150px)
+   HERO TEXT BREAK (1050px)
 ========================= */
-@media (max-width: 1150px) {
-
-  /* navbar padding kam karo */
-  .custom-navbar {
-    padding: 0 40px;
-  }
-
-  /* nav links thoda gap kam karo */
-  .nav-links {
-    gap: 20px;
-  }
-
-  /* nav link font slightly chota karo */
-  .nav-links a {
-    font-size: 15px;
-  }
-
-  /* contact button thoda chota karo */
-  .nav-btn {
-    padding: 6px 14px;
-    font-size: 15px;
-    height: 36px;
-  }
-
-  /* hero section ke headings thoda chota karo */
+@media (max-width: 1050px) {
   .hero h3 {
-    font-size: 46px;
+    font-size: 40px;       /* headline chota */
+    text-align: center;    /* center align */
+    line-height: 1.2;      /* break nicely */
   }
 
   .hero h4 {
-    font-size: 24px;
+    font-size: 20px;       /* subheading chota */
+    text-align: center;
+    line-height: 1.3;
   }
 
-  /* hero text card padding adjust karo */
   .hero .col-md-6.text-white {
-    padding: 50px;
-  }
-
-  /* hero image size adjust */
-  .hero img {
-    max-width: 600px;
-  }
-}
-@media (min-width: 769px) {
-  .nav-links {
-    max-height: none !important;  /* full height, no collapse */
-    display: flex !important;     /* ensure flex layout */
-    flex-direction: row;          /* horizontal layout */
-    gap: 30px;                    /* normal gap */
-    overflow: visible;            /* allow all content */
-  }
-
-  /* hamburger should stay hidden */
-  .menu-toggle {
-    display: none !important;
+    padding: 40px 20px;    /* text card adjust */
   }
 }
 
