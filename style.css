@@ -1,20 +1,203 @@
 /* =========================
+   BASIC RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* =========================
+   NAVBAR BASE
+========================= */
+.custom-navbar {
+  height: 70px;
+  width: 100%;
+  background-color: #0a1a2f;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+/* logo */
+.logo {
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* nav links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding-left: 0;
+  margin-top: 20px;
+   max-height: 0;        /* start collapsed */
+  overflow: hidden;     /* hide content */
+  transition: max-height 0.5s ease; /* smooth slide */
+}
+.nav-links.show {
+  max-height: 500px; /* adjust according to menu height */
+}
+.nav-links li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  position: relative;
+  text-decoration: none;
+  color: #dcdcdc;
+  font-size: 16px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+/* underline */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: 18px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #00c2ff;
+  transition: width 0.3s ease;
+}
+
+/* hover */
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+/* active link */
+
+
+/* contact button */
+.nav-btn {
+  padding: 8px 18px;
+  background-color: #00c2ff;
+  color: #0a1a2f;
+  border-radius: 20px;
+  font-weight: bold;
+  height: 40px!important ;
+}
+
+.nav-btn:hover {
+  background-color: #ffffff;
+}
+
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+.menu-toggle span {
+  transition: all 0.3s ease;
+}
+
+
+/* =========================
+   HAMBURGER
+========================= */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px 0;
+}
+
+/* =========================
+   NAVBAR ANIMATION (ON LOAD)
+========================= */
+.custom-navbar {
+  animation: navFadeDown 0.8s ease forwards;
+}
+
+@keyframes navFadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .custom-navbar {
+    padding: 0 30px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #0a1a2f;
+    flex-direction: column;
+    gap: 0;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    height: 60px;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-btn {
+    margin: 15px 0;
+  }
+}
+
+
+/* =========================
    PREMIUM HERO SECTION
 ========================= */
 .hero {
   min-height: 100vh;
   background:
-    /* Soft blue light */
     radial-gradient(circle at top right,
       rgba(100, 170, 255, 0.25),
       transparent 60%),
-
-    /* Blue ocean luxury overlay */
     linear-gradient(135deg,
       rgba(10, 45, 95, 0.55),
       rgba(15, 85, 155, 0.45)),
-
-    /* Actual sea image */
     url("images/sea.jpg") center / cover no-repeat;
 
   display: flex;
@@ -23,14 +206,12 @@
   overflow: hidden;
 }
 
-
-/* Light rays overlay */
+/* light rays */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(120deg,
+  background: linear-gradient(120deg,
       transparent 40%,
       rgba(255, 255, 255, 0.06),
       transparent 60%);
@@ -38,7 +219,7 @@
   pointer-events: none;
 }
 
-/* Luxury grain texture */
+/* grain texture */
 .hero::after {
   content: "";
   position: absolute;
@@ -49,7 +230,7 @@
 }
 
 /* =========================
-   TEXT PREMIUM FEEL
+   TEXT STYLE
 ========================= */
 .hero h3 {
   font-size: 52px;
@@ -66,16 +247,10 @@
   margin-top: 14px;
   font-weight: 300;
   color: #d8e3f2;
-  letter-spacing: 0.5px;
-}
-
-/* Smooth fade luxury slider */
-.carousel-item {
-  transition: opacity 1.5s ease-in-out;
 }
 
 /* =========================
-   PREMIUM GLASS CARD
+   GLASS CARD
 ========================= */
 .hero .col-md-6.text-white {
   background: rgba(255, 255, 255, 0.04);
@@ -86,7 +261,7 @@
 }
 
 /* =========================
-   GOLD LUXURY BUTTON
+   PREMIUM BUTTON
 ========================= */
 .hero .btn-primary {
   background: linear-gradient(135deg, #cfae70, #f5deb3);
@@ -98,18 +273,19 @@
   letter-spacing: 1px;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .hero .btn-primary::before {
   content: "";
   position: absolute;
-  top: 0;
+  inset: 0;
   left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-  transition: 0.6s;
+  background: linear-gradient(120deg,
+      transparent,
+      rgba(255, 255, 255, 0.5),
+      transparent);
+  transition: left 0.6s ease;
 }
 
 .hero .btn-primary:hover::before {
@@ -119,38 +295,34 @@
 .hero .btn-primary:hover {
   transform: translateY(-4px);
   box-shadow: 0 18px 40px rgba(207, 174, 112, 0.45);
-  background: #cfae70 !important;
 }
 
 /* =========================
-   FLOATING YACHT IMAGE
+   FLOATING IMAGE
 ========================= */
 .hero img {
-  width: 120%;
-  /* pehle 100% tha */
+  width: 100%;
   max-width: 650px;
-  /* size limit */
-  transform: translateX(20px);
   filter: drop-shadow(0 40px 70px rgba(0, 0, 0, 0.6));
   animation: floatPremium 6s ease-in-out infinite;
 }
 
 @keyframes floatPremium {
   0% {
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 
   50% {
-    transform: translateY(-22px) scale(1.02);
+    transform: translateY(-22px);
   }
 
   100% {
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
 /* =========================
-   ANIMATIONS
+   ANIMATION
 ========================= */
 @keyframes lightMove {
   0% {
@@ -167,8 +339,71 @@
 }
 
 /* =========================
-   MOBILE LUXURY
+   MOBILE VIEW
 ========================= */
+
+/* =========================
+   MID-SIZE SCREENS (1150px)
+========================= */
+@media (max-width: 1150px) {
+
+  /* navbar padding kam karo */
+  .custom-navbar {
+    padding: 0 40px;
+  }
+
+  /* nav links thoda gap kam karo */
+  .nav-links {
+    gap: 20px;
+  }
+
+  /* nav link font slightly chota karo */
+  .nav-links a {
+    font-size: 15px;
+  }
+
+  /* contact button thoda chota karo */
+  .nav-btn {
+    padding: 6px 14px;
+    font-size: 15px;
+    height: 36px;
+  }
+
+  /* hero section ke headings thoda chota karo */
+  .hero h3 {
+    font-size: 46px;
+  }
+
+  .hero h4 {
+    font-size: 24px;
+  }
+
+  /* hero text card padding adjust karo */
+  .hero .col-md-6.text-white {
+    padding: 50px;
+  }
+
+  /* hero image size adjust */
+  .hero img {
+    max-width: 600px;
+  }
+}
+@media (min-width: 769px) {
+  .nav-links {
+    max-height: none !important;  /* full height, no collapse */
+    display: flex !important;     /* ensure flex layout */
+    flex-direction: row;          /* horizontal layout */
+    gap: 30px;                    /* normal gap */
+    overflow: visible;            /* allow all content */
+  }
+
+  /* hamburger should stay hidden */
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
+
 @media (max-width: 768px) {
   .hero {
     text-align: center;
@@ -187,7 +422,6 @@
   }
 
   .hero img {
-    position: relative!important ;
-    right: 30px!important ;
+    margin-top: 30px;
   }
 }
