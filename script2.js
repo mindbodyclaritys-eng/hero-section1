@@ -10,20 +10,21 @@ menuToggle.addEventListener("click", () => {
     menuToggle.classList.toggle("active"); // hamburger X animation
 });
 
-// Active link logic
-links.forEach(link => {
-    link.addEventListener("click", () => {
-        // Remove active from all normal links
-        links.forEach(l => l.classList.remove("active"));
 
-        // Add active to clicked link
+// Get current page path
+const currentPath = window.location.pathname;
+
+// Loop through nav links
+navLinks.forEach(link => {
+    // Remove old active
+    link.classList.remove("active");
+
+    // If link href matches current path, set active
+    if(link.getAttribute("href") === currentPath) {
         link.classList.add("active");
-
-        // Close mobile menu if open
-        navLinks.classList.remove("show");
-        menuToggle.classList.remove("active");
-    });
+    }
 });
+
 
 AOS.init({
     duration: 1000,
