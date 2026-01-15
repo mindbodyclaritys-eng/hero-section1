@@ -24,3 +24,8 @@ links.forEach(link => {
         menuToggle.classList.remove("active");
     });
 });
+
+AOS.init({
+    duration: 1000,
+    once: true
+});
