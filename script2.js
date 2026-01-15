@@ -1,32 +1,36 @@
 const menuToggle = document.getElementById("menuToggle");
-const navLinks = document.getElementById("navLinks");
-
-// ⚡ Select only normal nav links, ignore nav-btn
+const navLinksContainer = document.getElementById("navLinks");
+const navLinks = document.querySelectorAll(".nav-links a");
 const links = document.querySelectorAll(".nav-links a:not(.nav-btn)");
 
 // Toggle mobile menu + hamburger animation
 menuToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
+    navLinksContainer.classList.toggle("show");
     menuToggle.classList.toggle("active"); // hamburger X animation
 });
 
+// Multi-page active link logic
+const currentPath = window.location.pathname.split("/").pop(); // Get only file name
 
-// Get current page path
-const currentPath = window.location.pathname;
-
-// Loop through nav links
-navLinks.forEach(link => {
+links.forEach(link => {
     // Remove old active
     link.classList.remove("active");
 
-    // If link href matches current path, set active
-    if(link.getAttribute("href") === currentPath) {
+    // Get href file name only
+    const linkPath = link.getAttribute("href").split("/").pop();
+
+    if(linkPath === currentPath) {
         link.classList.add("active");
     }
+
+    // Close mobile menu on click
+    link.addEventListener("click", () => {
+        navLinksContainer.classList.remove("show");
+        menuToggle.classList.remove("active");
+    });
 });
 
-
 AOS.init({
-    duration: 1000,
-    once: true
+    duration: 1000,   // animation speed (ms)
+    once: true        // ek dafa hi chale
 });
