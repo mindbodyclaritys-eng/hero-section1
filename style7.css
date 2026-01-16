@@ -41,7 +41,7 @@
         .boat-info {
             position: absolute;
             bottom: 0;
-            background: linear-gradient(rgba(10,31,68,.9),rgba(13,59,102,.7))
+            background: linear-gradient(rgba(10,31,68,.9),rgba(13,59,102,.7));
             color: #fff;
             width: 100%;
             padding: 15px;
