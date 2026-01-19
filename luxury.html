@@ -439,10 +439,9 @@
             crossorigin="anonymous"></script>
 
         <script>
-            // CARD CLICK BLUE SHADOW
             window.addEventListener('load', () => {
 
-                // CARD CLICK BLUE SHADOW
+                /* ================= CARD CLICK BLUE SHADOW ================= */
                 const cards = document.querySelectorAll('.card');
                 cards.forEach(card => {
                     card.addEventListener('click', () => {
@@ -451,7 +450,7 @@
                     });
                 });
 
-                // VIEW DETAILS OVERLAY DATA
+                /* ================= VIEW DETAILS OVERLAY DATA ================= */
                 const details = [
                     { title: 'Luxury Yacht', type: 'Yacht', description: 'This is a luxurious yacht with modern amenities. Price: $1,500,000' },
                     { title: 'Wedding Cruise', type: 'Wedding Ship', description: 'Perfect wedding cruise. Price: $800,000' },
@@ -478,37 +477,41 @@
                     });
                 });
 
-                function closeOverlay() {
+                window.closeOverlay = function () {
                     overlay.style.display = 'none';
-                }
+                };
 
-                function openModal(title, price, desc) {
+                window.openModal = function (title, price, desc) {
                     document.getElementById("modal").style.display = "block";
                     document.getElementById("mTitle").innerText = title;
                     document.getElementById("mPrice").innerText = price;
                     document.getElementById("mDesc").innerText = desc;
-                }
+                };
 
-                function closeModal() {
+                window.closeModal = function () {
                     document.getElementById("modal").style.display = "none";
-                }
+                };
 
-                // ✅ CAROUSEL INIT — NOW 100% RELIABLE
+                /* ================= 🔥 FINAL CAROUSEL FIX ================= */
                 const yachtCarouselEl = document.querySelector('#carouselExampleIndicators');
+
                 if (yachtCarouselEl) {
                     const yachtCarousel = new bootstrap.Carousel(yachtCarouselEl, {
                         interval: 5000,
-                        ride: 'carousel'
+                        pause: false,
+                        ride: false   // ❌ auto ride off
                     });
 
-                    // 🔥 FORCE IMMEDIATE START
-                    yachtCarousel.cycle();
+                    // 🔥 instant luxury-start trick
+                    setTimeout(() => {
+                        yachtCarousel.next();   // immediate movement
+                        yachtCarousel.cycle();  // normal flow
+                    }, 250); // ultra-fast but smooth
                 }
 
             });
-
-
         </script>
+
 
 </body>
 
