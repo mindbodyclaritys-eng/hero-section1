@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-            <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap"
@@ -22,7 +22,7 @@
 
 <body>
 
-     <nav class="custom-navbar" aria-label="Main Navigation" data-aos="zoom-in-down">
+    <nav class="custom-navbar" aria-label="Main Navigation" data-aos="zoom-in-down">
         <div class="logo">OceanFleet</div>
 
         <!-- Hamburger -->
@@ -55,7 +55,7 @@
                     <h3>Sail Beyond Ordinary</h3>
 
                     <!-- h4 SLIDER -->
-                    <div id="heroSlider" class="carousel slide carousel-fade mt-2" data-bs-ride="carousel">
+                    <div id="heroSlider" class="carousel slide carousel-fade mt-2">
                         <div class="carousel-inner">
 
                             <div id="carousel-s" class="carousel-item active">
@@ -94,19 +94,19 @@
     <script src="script2.js"></script>
 
 
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-  <div class="carousel-inner cl-in">
-    <div class="carousel-item active">
-        <img src="bigimg1.jpg" class="carousel-img" alt="">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-interval="3000">
+        <div class="carousel-inner cl-in">
+            <div class="carousel-item active">
+                <img src="bigimg1.jpg" class="carousel-img" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="bigimg5.jpg" class="carousel-img" alt="">
+            </div>
+            <div class="carousel-item">
+                <img src="bigimg3.jpg" class="carousel-img" alt="">
+            </div>
+        </div>
     </div>
-    <div class="carousel-item">
-        <img src="bigimg5.jpg" class="carousel-img" alt="">
-    </div>
-    <div class="carousel-item">
-      <img src="bigimg3.jpg" class="carousel-img" alt="">
-    </div>
-  </div>
-</div>
 
     <h2 class="sailing-heading">
         <span>Our</span>
@@ -434,65 +434,82 @@
 
 
 
-        <script>
-            // CARD CLICK BLUE SHADOW
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                card.addEventListener('click', () => {
-                    cards.forEach(c => c.classList.remove('active-card'));
-                    card.classList.add('active-card');
-                });
-            });
-
-            // VIEW DETAILS OVERLAY DATA
-            const details = [
-                { title: 'Luxury Yacht', type: 'Yacht', description: 'This is a luxurious yacht with modern amenities. Price: $1,500,000' },
-                { title: 'Wedding Cruise', type: 'Wedding Ship', description: 'Perfect wedding cruise. Price: $800,000' },
-                { title: 'Fishing Boat', type: 'Fishing Ship', description: 'Durable fishing ship. Price: $120,000' },
-                { title: 'Premium Yacht', type: 'Yacht', description: 'Premium yacht with luxury interiors. Price: $2,200,000' },
-                { title: 'Romantic Wedding Ship', type: 'Wedding Ship', description: 'Ideal for wedding celebrations. Price: $950,000' },
-                { title: 'Speed Fishing Boat', type: 'Fishing Ship', description: 'Fast and efficient fishing boat. Price: $150,000' },
-                { title: 'Explorer Yacht', type: 'Yacht', description: 'Perfect yacht for long journeys. Price: $1,800,000' },
-                { title: 'Luxury Wedding Ship', type: 'Wedding Ship', description: 'Ideal for luxury wedding parties. Price: $1,100,000' }
-            ];
-
-            const overlay = document.getElementById('detailsOverlay');
-            const overlayTitle = document.getElementById('overlayTitle');
-            const overlayType = document.getElementById('overlayType');
-            const overlayDescription = document.getElementById('overlayDescription');
-
-            const viewButtons = document.querySelectorAll('.view-btn');
-            viewButtons.forEach((btn, index) => {
-                btn.addEventListener('click', (e) => {
-                    e.stopPropagation(); // prevent shadow toggle
-                    overlay.style.display = 'flex';
-                    overlayTitle.textContent = details[index].title;
-                    overlayType.textContent = "Type: " + details[index].type;
-                    overlayDescription.textContent = details[index].description;
-                });
-            });
-
-            function closeOverlay() {
-                overlay.style.display = 'none';
-            }
-            function openModal(title, price, desc) {
-                document.getElementById("modal").style.display = "block";
-                document.getElementById("mTitle").innerText = title;
-                document.getElementById("mPrice").innerText = price;
-                document.getElementById("mDesc").innerText = desc;
-            }
-
-            function closeModal() {
-                document.getElementById("modal").style.display = "none";
-            }
-
-
-
-
-        </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
             crossorigin="anonymous"></script>
+
+        <script>
+            // CARD CLICK BLUE SHADOW
+            window.addEventListener('load', () => {
+
+                // CARD CLICK BLUE SHADOW
+                const cards = document.querySelectorAll('.card');
+                cards.forEach(card => {
+                    card.addEventListener('click', () => {
+                        cards.forEach(c => c.classList.remove('active-card'));
+                        card.classList.add('active-card');
+                    });
+                });
+
+                // VIEW DETAILS OVERLAY DATA
+                const details = [
+                    { title: 'Luxury Yacht', type: 'Yacht', description: 'This is a luxurious yacht with modern amenities. Price: $1,500,000' },
+                    { title: 'Wedding Cruise', type: 'Wedding Ship', description: 'Perfect wedding cruise. Price: $800,000' },
+                    { title: 'Fishing Boat', type: 'Fishing Ship', description: 'Durable fishing ship. Price: $120,000' },
+                    { title: 'Premium Yacht', type: 'Yacht', description: 'Premium yacht with luxury interiors. Price: $2,200,000' },
+                    { title: 'Romantic Wedding Ship', type: 'Wedding Ship', description: 'Ideal for wedding celebrations. Price: $950,000' },
+                    { title: 'Speed Fishing Boat', type: 'Fishing Ship', description: 'Fast and efficient fishing boat. Price: $150,000' },
+                    { title: 'Explorer Yacht', type: 'Yacht', description: 'Perfect yacht for long journeys. Price: $1,800,000' },
+                    { title: 'Luxury Wedding Ship', type: 'Wedding Ship', description: 'Ideal for luxury wedding parties. Price: $1,100,000' }
+                ];
+
+                const overlay = document.getElementById('detailsOverlay');
+                const overlayTitle = document.getElementById('overlayTitle');
+                const overlayType = document.getElementById('overlayType');
+                const overlayDescription = document.getElementById('overlayDescription');
+
+                document.querySelectorAll('.view-btn').forEach((btn, index) => {
+                    btn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        overlay.style.display = 'flex';
+                        overlayTitle.textContent = details[index].title;
+                        overlayType.textContent = "Type: " + details[index].type;
+                        overlayDescription.textContent = details[index].description;
+                    });
+                });
+
+                function closeOverlay() {
+                    overlay.style.display = 'none';
+                }
+
+                function openModal(title, price, desc) {
+                    document.getElementById("modal").style.display = "block";
+                    document.getElementById("mTitle").innerText = title;
+                    document.getElementById("mPrice").innerText = price;
+                    document.getElementById("mDesc").innerText = desc;
+                }
+
+                function closeModal() {
+                    document.getElementById("modal").style.display = "none";
+                }
+
+                // ✅ CAROUSEL INIT — NOW 100% RELIABLE
+                const yachtCarouselEl = document.querySelector('#carouselExampleIndicators');
+                if (yachtCarouselEl) {
+                    const yachtCarousel = new bootstrap.Carousel(yachtCarouselEl, {
+                        interval: 5000,
+                        ride: 'carousel'
+                    });
+
+                    // 🔥 FORCE IMMEDIATE START
+                    yachtCarousel.cycle();
+                }
+
+            });
+
+
+        </script>
+
 </body>
 
 </html>
