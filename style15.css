@@ -1,0 +1,178 @@
+       body {
+  font-family: Arial, sans-serif;
+}
+
+.shop {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+}
+
+.filters {
+  width: 220px;
+}
+
+.filters h4 {
+  margin: 20px 0 10px;
+}
+
+.filters label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.products {
+  flex: 1;
+}
+
+.products h2 {
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.card {
+  position: relative;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.tag {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+.price {
+  color: red;
+  font-weight: bold;
+}
+
+.stars {
+  color: #444;
+}
+/* Mobile view */
+@media (max-width: 992px) {
+  .shop {
+    flex-direction: column; /* Filters upar, products niche */
+    padding: 20px;
+  }
+
+  .filters {
+    width: 100%; /* full width */
+    margin-bottom: 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    gap: 15px;
+  }
+
+  .card img {
+    height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr; /* Mobile single column */
+    gap: 10px;
+  }
+
+  .card img {
+    height: 200px; /* thoda bada dikhe mobile me */
+  }
+
+  .filters label {
+    font-size: 12px;
+  }
+
+  .products h2 {
+    text-align: center;
+  }
+}
+    .popular {
+  padding: 40px;
+}
+
+.popular h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 25px;
+}
+
+.item {
+  height: 320px;          /* images badi */
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.popular {
+  padding: 40px;
+}
+
+.popular h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Desktop & Tablet */
+.popular-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.item {
+  height: 320px;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .item {
+    height: 260px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .popular-grid {
+    grid-template-columns: 1fr; /* 1 image per row */
+  }
+
+  .item {
+    height: 220px;
+  }
+}
