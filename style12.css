@@ -9,9 +9,10 @@
 
 /* ================= HEADING ================= */
 .sailing-heading {
-  font-size: 64px;
   font-weight: 800;
   text-align: center;
+  font-size: 54px;
+  margin: 20px 0px;
 }
 
 /* ================= ANIMATED WORD ================= */
@@ -675,8 +676,9 @@
   .contact-map {
     min-height: 300px;
   }
-    .card-fath {
-    grid-template-columns:1fr;
+
+  .card-fath {
+    grid-template-columns: 1fr;
     gap: 25px;
   }
 
@@ -689,19 +691,20 @@
 }
 
 @media (max-width: 992px) {
-  .carousel-item {
+  .cl-in .carousel-item {
     height: 55vh;
   }
 }
+
 @media (max-width: 1030px) {
-  .card{
+  .card {
     width: 300px;
   }
 }
 
 /* Mobile */
 @media (max-width: 576px) {
-  .carousel-item {
+  .cl-in .carousel-item {
     height: 38vh;
   }
 }
@@ -734,7 +737,8 @@
   .subscribe-form button {
     width: 100%;
   }
-    .card-fath{
+
+  .card-fath {
     grid-template-columns: 1fr;
     gap: 20px;
   }
