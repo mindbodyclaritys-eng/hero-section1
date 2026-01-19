@@ -8,6 +8,11 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body{
+    background:linear-gradient(rgba(10,31,68,.9), rgba(13,59,102,.7));
+    color: white!important ;
+}
+
 /* =========================
    PREMIUM NAVBAR
 ========================= */
