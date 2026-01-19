@@ -10,13 +10,44 @@
 /* ================= HEADING ================= */
 .sailing-heading {
   font-size: 64px;
+  font-weight: 800;
   text-align: center;
 }
 
 /* ================= ANIMATED WORD ================= */
+.pp-heading {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  margin: 40px 0 25px;
+}
 
+.pp-heading span {
+  position: relative;
+  color: #081a3a;
+  margin: 0 8px;
+  display: inline-block;
+}
 
+/* blue highlight strip */
+.pp-heading span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 6px;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, #003cff, #00c6ff);
+  opacity: 0.18;
+  z-index: -1;
+  border-radius: 6px;
+}
 
+/* hover luxury effect */
+.pp-heading span:hover {
+  color: #003cff;
+}
 
 .pp-heading span:hover::after {
   opacity: 0.35;
@@ -54,14 +85,14 @@
 }
 
 
-
 /* Each word with subtle float + glow */
 .sailing-heading span {
   display: inline-block;
   position: relative;
   animation: floatWords 3s ease-in-out infinite alternate;
   transition: 0.3s;
-  margin: 10px 6px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 60, 255, 0.4), 0 0 12px rgba(0, 212, 255, 0.3);
+  margin: 0 6px;
 }
 
 /* FLOAT KEYFRAMES */
