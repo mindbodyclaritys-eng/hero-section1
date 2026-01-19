@@ -164,7 +164,6 @@
 
         /* FOOTER */
         .footer {
-            color: #aaa;
             padding: 25px 10px;
             text-align: center;
             font-size: 14px;
@@ -178,7 +177,6 @@
         .footer span {
             display: block;
             margin-top: 6px;
-            color: #666;
         }
 
         /* RESPONSIVE */
