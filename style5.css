@@ -5,18 +5,6 @@
             font-family: Arial, sans-serif;
         }
 
-        body {
-            background: #fff;
-            color: #333;
-        }
-
-        /* HERO */
-        .hero {
-            background: #0fa8e3;
-            padding: 40px 20px;
-            text-align: center;
-            color: #fff;
-        }
 
         .hero h1 {
             font-size: 36px;
@@ -29,7 +17,6 @@
 
         /* CONTACT SECTION */
         .contact-section {
-            background: #f9c600;
             padding: 50px 20px;
             text-align: center;
         }
