@@ -263,7 +263,8 @@
       transparent 60%),
     linear-gradient(135deg,
       rgba(10, 45, 95, 0.55),
-      rgba(15, 85, 155, 0.45));
+      rgba(15, 85, 155, 0.45)),
+      background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
   display: flex;
   align-items: center;
   position: relative;
@@ -425,4 +426,5 @@
   .hero img {
     margin-top: 30px;
   }
+
 }
