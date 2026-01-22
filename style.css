@@ -11,7 +11,7 @@
 body {
   background: linear-gradient(rgba(10, 31, 68, .9), rgba(13, 59, 102, .7));
   color: white !important;
-   scrollbar-gutter: stable;
+  scrollbar-gutter: stable;
 }
 
 
@@ -38,10 +38,11 @@ body {
 /* =========================
    LOGO (LUXURY)
 ========================= */
-.logo-cont{
+.logo-cont {
   display: flex;
   gap: 10px;
 }
+
 .logo {
   font-size: 26px;
   font-weight: 700;
@@ -50,7 +51,8 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.logo-img{
+
+.logo-img {
   width: 50px;
   height: 30px;
   transform: scale(3);
@@ -133,7 +135,8 @@ body {
   padding: 8px 18px;
   background: #0fa8e3;
   color: #fff;
-  border: 1px solid transparent; /* ✅ important */
+  border: 1px solid transparent;
+  /* ✅ important */
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
@@ -143,7 +146,8 @@ body {
 .login-btn:hover {
   background: #fff;
   color: #0fa8e3;
-  border-color: #0fa8e3; /* ✅ sirf color change */
+  border-color: #0fa8e3;
+  /* ✅ sirf color change */
 }
 
 .login-btn:focus,
@@ -169,18 +173,23 @@ body {
 
 /* CART CARD */
 .fleet-card {
-    display: none;            /* initially hidden */
-    position: absolute;       /* absolute positioning */
-    top: 60px;                /* distance from navbar */
-    right: 0;                 /* stick to right */
-    width: 220px;
-    background: #fff;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+  display: none;
+  /* initially hidden */
+  position: absolute;
+  /* absolute positioning */
+  top: 60px;
+  /* distance from navbar */
+  right: 0;
+  /* stick to right */
+  width: 220px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 
-    flex: none;               /* important: don't let flex affect layout */
+  flex: none;
+  /* important: don't let flex affect layout */
 }
 
 .card h3 {
@@ -563,6 +572,145 @@ body {
 
   100% {
     transform: translateX(-20%);
+  }
+}
+
+/* FOOTER */
+.footer {
+  background: linear-gradient(135deg, #020d14, #041f2d);
+  color: #ccc;
+  padding: 60px 20px 40px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+}
+
+.footer-section {
+  animation: fadeUp 1s ease;
+}
+
+.footer-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 14px;
+  position: relative;
+}
+
+.footer-title::after {
+  content: "";
+  width: 55px;
+  height: 3px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  display: block;
+  margin-top: 8px;
+  border-radius: 3px;
+}
+
+.footer-text {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #bfcad3;
+}
+
+/* Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin: 8px 0;
+}
+
+.footer-links a {
+  color: #bfcad3;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #00c6ff;
+  padding-left: 6px;
+}
+
+/* Newsletter */
+.subscribe-form {
+  display: flex;
+  margin-top: 12px;
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.subscribe-form input {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  font-size: 14px;
+  outline: none;
+}
+
+.subscribe-form button {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  border: none;
+  color: #fff;
+  padding: 12px 22px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.subscribe-form button:hover {
+  opacity: 0.85;
+}
+
+/* Copyright */
+.copyright {
+  background: #01080c;
+  text-align: center;
+  padding: 14px;
+  font-size: 13px;
+  color: #8fa3b5;
+}
+
+/* Animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer-title::after {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+    border-radius: 10px;
+  }
+
+  .subscribe-form button {
+    width: 100%;
   }
 }
 
