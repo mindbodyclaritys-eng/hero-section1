@@ -5,25 +5,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marina Fleet - Contact Us</title>
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style20.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style5.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap"
         rel="stylesheet">
 
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 
 <body>
 
-     <nav class="custom-navbar" aria-label="Main Navigation" data-aos="zoom-in-down">
+    <nav class="custom-navbar" aria-label="Main Navigation" data-aos="zoom-in-down">
         <div class="logo-cont">
 
             <div class="logo">OceanFleet</div>
@@ -41,7 +40,7 @@
             <li><a href="./index.html" class="active">Home</a></li>
             <li><a href="./gallery.html">Gallery</a></li>
             <li><a href="./luxury.html">Luxury</a></li>
-            <li><a href="./sailing.html">Sailing</a></li>
+            <li><a href="#">Sailing</a></li>
             <li><a href="./fishing.html">Fishing</a></li>
             <li><a href="./about_us.html">About</a></li>
             <li><a href="./contact_us.html">Contact us</a></li>
@@ -50,7 +49,6 @@
         <div class="nav-actions">
             <button class="login-btn" id="openModal">Login</button>
             <div class="user-icon" id="userIcon"><i class="fas fa-user"></i></div>
-            <div class="toggle-btn" id="toggleBtn"><i class="fas fa-bars"></i></div>
             <div class="card" id="cartCard">
                 <h3><i class="fas fa-ship"></i> Your Cart</h3>
                 <div class="empty-cart">No ships added yet</div>
@@ -91,7 +89,6 @@
             </div>
         </div>
     </div>
-
 
     <section class="hero" id="home">
         <div class="container">
@@ -146,13 +143,21 @@
 
     <section class="contact-section">
         <h2>Contact Us</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Name">
-            <input type="email" placeholder="Email">
-            <input type="text" placeholder="Subject">
-            <textarea rows="5" placeholder="Message"></textarea>
-            <button>SEND</button>
-        </form>
+        <div class="contact-container">
+            <form class="contact-form">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Subject">
+                <textarea rows="5" placeholder="Message"></textarea>
+                <button>SEND</button>
+            </form>
+
+            <div class="contact-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d463086.0709718188!2d66.79605897555084!3d24.93684119967327!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1smarina%20flet!5e0!3m2!1sen!2s!4v1768463402025!5m2!1sen!2s"
+                    allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
     </section>
 
     <footer class="footer">
@@ -160,7 +165,6 @@
 
             <div class="footer-section">
                 <h2 class="footer-title">MARINA FLEET</h2>
-                <div class="title-line"></div>
                 <p class="footer-text">
                     Marina Fleet is your trusted partner for premium maritime services,
                     providing professional fleet management and reliable marine solutions
@@ -170,7 +174,6 @@
 
             <div class="footer-section">
                 <h2 class="footer-title">USEFUL LINKS</h2>
-                <div class="title-line"></div>
                 <ul class="footer-links">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About Us</a></li>
@@ -182,7 +185,6 @@
 
             <div class="footer-section contact-us">
                 <h2 class="footer-title">CONTACT US</h2>
-                <div class="title-line"></div>
                 <p>APWA Complex, 1st Floor</p>
                 <p>Agha Khan 3 Rd, Garden East</p>
                 <p>Saddar Town, Karachi</p>
@@ -199,7 +201,6 @@
 
             <div class="footer-section">
                 <h2 class="footer-title">OUR NEWSLETTER</h2>
-                <div class="title-line"></div>
                 <p class="footer-text">
                     A newsletter is a printed report containing news of business activities.
                 </p>
@@ -219,12 +220,7 @@
             Designed by <span>Marina Fleet</span>
         </div>
     </div>
-    <script>
-        AOS.init({
-            duration: 1000,   // animation speed (ms)
-            once: true        // ek dafa hi chale
-        });
-    </script>
+
 </body>
 
 </html>
