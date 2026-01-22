@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Marina Fleet & Popular Products</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style16.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Bootstrap CSS -->
+
+
+</head>
+
+<body>
+
+    <nav class="custom-navbar" aria-label="Main Navigation" data-aos="zoom-in-down">
+        <div class="logo-cont">
+
+            <div class="logo">OceanFleet</div>
+            <img class="logo-img" src="ocean1d.png" alt="">
+        </div>
+
+        <!-- Hamburger -->
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="./index.html" class="active">Home</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./luxury.html">Luxury</a></li>
+            <li><a href="#">Sailing</a></li>
+            <li><a href="./fishing.html">Fishing</a></li>
+            <li><a href="./about_us.html">About</a></li>
+            <li><a href="./contact_us.html">Contact us</a></li>
+
+        </ul>
+        <div class="nav-actions">
+            <button class="login-btn" id="openModal">Login</button>
+            <div class="user-icon" id="userIcon"><i class="fas fa-user"></i></div>
+            <div class="toggle-btn" id="toggleBtn"><i class="fas fa-bars"></i></div>
+            <div class="card" id="cartCard">
+                <h3><i class="fas fa-ship"></i> Your Cart</h3>
+                <div class="empty-cart">No ships added yet</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- LOGIN MODAL -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+
+            <!-- LOGIN FORM -->
+            <div id="loginForm">
+                <h2>Login</h2>
+                <form>
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <button type="submit">Login</button>
+                    <button type="button" class="google-btn"><i class="fab fa-google"></i> Continue with
+                        Google</button>
+                </form>
+                <div class="switch-form">Don't have an account? <a id="showRegister">Register</a></div>
+            </div>
+
+            <!-- REGISTER FORM -->
+            <div id="registerForm" style="display:none;">
+                <h2>Register</h2>
+                <form>
+                    <input type="text" placeholder="Full Name" required />
+                    <input type="email" placeholder="Email" required />
+                    <input type="password" placeholder="Password" required />
+                    <button type="submit">Register</button>
+                    <button type="button" class="google-btn"><i class="fab fa-google"></i> Continue with
+                        Google</button>
+                </form>
+                <div class="switch-form">Already have an account? <a id="showLogin">Login</a></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <!-- TEXT SLIDER -->
+                <div class="col-md-6 text-white" data-aos="zoom-in-up">
+
+                    <!-- STATIC HEADING -->
+                    <h3>unforgettable sea journeys</h3>
+
+                    <!-- h4 SLIDER -->
+                    <div id="heroSlider" class="carousel slide carousel-fade mt-2" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+
+                            <div class="carousel-item active">
+                                <h4>Start Your Journey</h4>
+                            </div>
+
+                            <div class="carousel-item">
+                                <h4>Explore the Sea</h4>
+                            </div>
+
+                            <div class="carousel-item">
+                                <h4>Book Your Experience</h4>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- BUTTON -->
+                    <a href="#" class="btn btn-primary mt-4">Book Your Cruise</a>
+
+                </div>
+
+
+                <!-- IMAGE -->
+                <div class="col-md-6 text-center" data-aos="zoom-in-right">
+                    <img src="boat1.png" class="img-fluid" alt="Ship">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="script2.js"></script>
+
+
+    <!-- =================== FLEET + FILTER =================== -->
+    <section id="fleet-section">
+        <div class="fleet-container">
+
+            <!-- FILTER -->
+            <div class="filter-section">
+
+                <div class="filters">
+                    <button onclick="applyFilter('all')">All</button>
+                    <button onclick="applyFilter('luxury')">Luxury</button>
+                    <button onclick="applyFilter('sailing')">Sailing</button>
+                </div>
+
+                <h3>DISCOUNT</h3>
+                <label><input type="checkbox"> 5% or More</label>
+                <label><input type="checkbox"> 10% or More</label>
+                <label><input type="checkbox"> 20% or More</label>
+                <label><input type="checkbox"> 30% or More</label>
+
+                <h3>CUSTOMER REVIEW</h3>
+                <label><input type="radio" name="rating"> ★★★★★ 5.0</label>
+                <label><input type="radio" name="rating"> ★★★★☆ 4.0</label>
+                <label><input type="radio" name="rating"> ★★★☆☆ 3.5</label>
+            </div>
+
+            <!-- FLEET -->
+            <div class="fleet">
+                <h1>Luxury Collection</h1>
+                <div class="cards" id="fleetCards"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =================== FLEET MODAL (ONLY ONE) =================== -->
+    <div class="fleet-modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <div class="modal-left">
+                <img id="mainImg" class="modal-main-img" src="" alt="">
+                <div class="modal-thumbnails" id="thumbs"></div>
+            </div>
+            <div class="modal-details" id="modalDetails"></div>
+        </div>
+    </div>
+
+    <!-- =================== POPULAR PRODUCTS =================== -->
+    <section class="popular">
+        <h1>Popular Products</h1>
+        <div class="popular-cards" id="popularCards"></div>
+    </section>
+
+    <!-- =================== POPULAR MODAL =================== -->
+    <div class="p-modal" id="pModal">
+        <span class="close" onclick="closePModal()">&times;</span>
+        <div class="p-modal-content">
+            <img id="pMainImg" src="" alt="">
+            <div class="p-modal-details">
+                <div id="pModalDetails"></div>
+                <div class="p-modal-thumbnails" id="pThumbs"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =================== FOOTER =================== -->
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h2 class="footer-title">MARINA FLEET</h2>
+                <div class="title-line"></div>
+                <p class="footer-text">
+                    Marina Fleet provides premium maritime services and luxury vessels worldwide.
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h2 class="footer-title">USEFUL LINKS</h2>
+                <div class="title-line"></div>
+                <ul class="footer-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h2 class="footer-title">NEWSLETTER</h2>
+                <div class="title-line"></div>
+                <div class="subscribe-form">
+                    <input type="email" placeholder="Enter email">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <div class="copyright">
+        © 2025 Marina Fleet. All Rights Reserved.
+    </div>
+
+    <script src="script3.js"></script>
+</body>
+
+</html>

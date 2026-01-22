@@ -1,0 +1,760 @@
+        /* ================= RESET ================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ================= BODY ================= */
+        body {
+            background: #0b1c2d;
+            color: #fff;
+        }
+
+        /* ================= FLEET + FILTER LAYOUT ================= */
+        .fleet-container {
+            display: flex;
+            gap: 30px;
+            padding: 40px 20px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: auto;
+            align-items: flex-start;
+        }
+
+        .filter-section {
+            flex: 0 0 250px;
+            background: #0b1c2d;
+            padding: 20px;
+            border-radius: 12px;
+            color: #fff;
+            height: fit-content;
+        }
+
+        .filter-section h3 {
+            margin-bottom: 10px;
+            font-size: 18px;
+            border-bottom: 1px solid #00d8ff33;
+            padding-bottom: 5px;
+        }
+
+        .filter-section label {
+            display: block;
+            margin: 8px 0;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .filter-section input[type="checkbox"],
+        .filter-section input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        /* ================= FLEET ================= */
+        .fleet {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .fleet h1 {
+            text-align: left;
+            color: #fff;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        /* ================= CARDS ================= */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        /* ================= FLEET CARDS (NO BOOTSTRAP CONFLICT) ================= */
+
+        .fleet-card {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.4s;
+            backdrop-filter: blur(10px);
+        }
+
+        .fleet-card img {
+            width: 100%;
+            height: 220px !important;
+            /* 🔥 force height */
+            object-fit: cover;
+            display: block;
+        }
+
+        .fleet-card:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 30px rgba(0, 123, 255, 0.8);
+        }
+
+
+        .card-info {
+            padding: 15px 20px;
+            text-align: center;
+        }
+
+        .card-info h3 {
+            margin: 0 0 5px;
+            font-size: 18px;
+        }
+
+        .card-info p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .card-info .price {
+            font-weight: bold;
+            color: #00d8ff;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .card-info .stars {
+            color: gold;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .card:hover {
+            transform: scale(1.08);
+            box-shadow: 0 0 30px rgba(0, 123, 255, 0.8);
+        }
+
+        /* ================= FLEET MODAL ================= */
+        .fleet-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 999;
+        }
+
+        .fleet-modal .modal-content {
+            background: #111;
+            max-width: 1000px;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 20px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .modal-left {
+            flex: 1;
+            text-align: center;
+        }
+
+        .modal-main-img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .modal-thumbnails {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .modal-thumbnails img {
+            width: 30%;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .modal-thumbnails img:hover,
+        .modal-thumbnails img.active {
+            opacity: 1;
+            border: 2px solid gold;
+        }
+
+        .modal-details {
+            flex: 1;
+            text-align: center;
+        }
+
+        .modal-details h2 {
+            margin-top: 0;
+        }
+
+        .modal-details p {
+            color: #ccc;
+            margin: 10px 0;
+        }
+
+        .modal-details .price {
+            font-size: 20px;
+            color: #00d8ff;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .modal-details .stars {
+            font-size: 22px;
+            color: gold;
+            margin: 10px 0;
+        }
+
+        .fleet-modal .close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 40px;
+            cursor: pointer;
+        }
+
+        /* ================= POPULAR PRODUCTS ================= */
+        .popular {
+            padding: 50px;
+            background: #071121;
+            text-align: center;
+        }
+
+        .popular h1 {
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+        .popular-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .p-card {
+            background: linear-gradient(145deg, #0f2a40, #0b1c2d);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.5s;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .p-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(0, 200, 255, 0.6);
+        }
+
+        .p-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid #00d8ff33;
+        }
+
+        .p-card-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .p-card-info h3 {
+            margin: 10px 0 5px;
+        }
+
+        .p-card-info .price {
+            color: #00d8ff;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        .p-card-info .stars {
+            color: gold;
+            margin-bottom: 10px;
+        }
+
+        .p-card-info button {
+            background: #00d8ff;
+            color: #0b1c2d;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .p-card-info button:hover {
+            background: gold;
+            color: #111;
+        }
+
+        /* ================= POPULAR MODAL ================= */
+        .p-modal {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            inset-x: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            padding: 20px;
+        }
+
+        .p-modal-content {
+            background: #111;
+            max-width: 900px;
+            margin: auto;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            border-radius: 20px;
+            padding: 20px;
+            align-items: center;
+        }
+
+        .p-modal-content img {
+            flex: 1;
+            border-radius: 10px;
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        .p-modal-details {
+            flex: 1;
+            color: #fff;
+            text-align: center;
+        }
+
+        .p-modal-details h2 {
+            margin-top: 0;
+        }
+
+        .p-modal-details .price {
+            color: #00d8ff;
+            font-weight: bold;
+            font-size: 22px;
+            margin: 10px 0;
+        }
+
+        .p-modal-details .stars {
+            font-size: 20px;
+            color: gold;
+            margin: 10px 0;
+        }
+
+        .p-modal-thumbnails {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .p-modal-thumbnails img {
+            width: 30%;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .p-modal-thumbnails img:hover,
+        .p-modal-thumbnails img.active {
+            opacity: 1;
+            border: 2px solid gold;
+        }
+
+        .p-modal .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 35px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        /* ================= CONTACT ================= */
+        .contact-us p,
+        .footer-text {
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .contact-us a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .contact-us a:hover {
+            color: #00a7e1;
+        }
+
+        .social-icons a {
+            color: #ccc;
+            margin-right: 10px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #00a7e1;
+            transform: scale(1.2);
+        }
+
+        /* ================= HERO ================= */
+        .hero {
+            background: #0fa8e3;
+            padding: 40px 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-top: 8px;
+        }
+
+        /* ================= CONTACT FORM ================= */
+        .contact-section {
+            background: #f9c600;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            background: #f3f3f3;
+            outline: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            background: #f0faff;
+            border-left: 5px solid #00a7e1;
+            box-shadow: 0 0 8px rgba(0, 167, 225, 0.4);
+        }
+
+        .contact-form button {
+            background: #00a7e1;
+            color: #fff;
+            padding: 12px 35px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .contact-form button:hover {
+            background: #007bb3;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form button:active {
+            transform: scale(0.95);
+        }
+
+        /* ================= FOOTER ================= */
+        .footer {
+            background: #000;
+            color: #fff;
+            padding: 50px 20px 30px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .footer-section {
+            flex: 1 1 250px;
+        }
+
+        .footer-title {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .title-line {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(to right, #e6be1e 50%, #fff 50%);
+            margin-bottom: 18px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin: 6px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-links a::before {
+            content: ">";
+            margin-right: 6px;
+            color: #fff;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .subscribe-form {
+            display: flex;
+            margin-top: 10px;
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .subscribe-form input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            font-size: 14px;
+        }
+
+        .subscribe-form button {
+            background: #e6be1e;
+            border: none;
+            padding: 10px 18px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .subscribe-form button:hover {
+            background: #00a7e1;
+            color: #fff;
+        }
+
+        .copyright {
+            background: #111;
+            text-align: center;
+            padding: 14px;
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .designed {
+            margin-top: 5px;
+            font-size: 13px;
+        }
+
+        .designed span {
+            color: #e6be1e;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .designed span:hover {
+            color: #00a7e1;
+        }
+
+        .filters {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filters button {
+            padding: 8px 16px;
+            margin: 5px;
+            border: none;
+            background: #00a7e1;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .filters button:hover {
+            background: #007bb3;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* ================= MEDIA QUERIES ================= */
+        /* ================= EXTRA RESPONSIVE FIX ================= */
+
+        /* Large Tablets */
+        /* ================= LARGE TABLETS ================= */
+        @media (max-width: 1024px) {
+            .fleet-container {
+                gap: 20px;
+            }
+
+            .filter-section {
+                flex: 1 1 100%;
+                order: -1;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .popular-cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ================= 850px → ONE CARD ================= */
+
+
+        /* ================= TABLETS ================= */
+        @media (max-width: 768px) {
+
+            .cards {
+                grid-template-columns: 1fr !important;
+            }
+
+            .popular-cards {
+                grid-template-columns: 1fr !important;
+            }
+
+            .card:hover {
+                transform: none;
+            }
+
+            .fleet-container {
+                padding: 20px 15px;
+            }
+
+            .fleet h1 {
+                text-align: center;
+            }
+
+            .popular {
+                padding: 30px 15px;
+            }
+
+            .modal-content,
+            .p-modal-content {
+                margin: 10% 10px;
+            }
+
+            .modal-thumbnails img,
+            .p-modal-thumbnails img {
+                width: 45%;
+            }
+        }
+
+        /* ================= MOBILE ================= */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 26px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .filter-section h3 {
+                text-align: center;
+            }
+
+            .filter-section label {
+                font-size: 13px;
+            }
+
+            .card img {
+                height: 160px;
+            }
+
+            .card-info h3 {
+                font-size: 16px;
+            }
+
+            .card-info .price {
+                font-size: 16px;
+            }
+
+            .modal-main-img {
+                max-height: 220px;
+                object-fit: cover;
+            }
+
+            .modal-details h2 {
+                font-size: 20px;
+            }
+
+            .p-card img {
+                height: 140px;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links li {
+                border-bottom: none;
+            }
+
+            .subscribe-form {
+                flex-direction: column;
+            }
+
+            .subscribe-form input,
+            .subscribe-form button {
+                width: 100%;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
