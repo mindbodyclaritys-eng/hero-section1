@@ -575,144 +575,155 @@ body {
   }
 }
 
-/* FOOTER */
-.footer {
-  background: linear-gradient(135deg, #020d14, #041f2d);
-  color: #ccc;
-  padding: 60px 20px 40px;
+/* ================= OCEAN FLEET FOOTER ================= */
+
+.of-footer {
+  background: linear-gradient(rgba(10, 31, 68, 0.9),
+      rgba(13, 59, 102, 0.7));
+  color: #e0e6ed;
+  padding: 70px 20px 50px;
 }
 
-.footer-container {
+/* Layout */
+.of-footer-wrap {
   max-width: 1200px;
   margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  display: flex;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
-.footer-section {
-  animation: fadeUp 1s ease;
+.of-footer-block {
+  flex: 1 1 280px;
 }
 
-.footer-title {
-  font-size: 20px;
-  font-weight: 700;
+/* Headings */
+.of-footer-title {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   color: #ffffff;
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   position: relative;
+  display: inline-block;
 }
 
-.footer-title::after {
+/* Animated underline */
+.of-footer-title::after {
   content: "";
-  width: 55px;
-  height: 3px;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
   display: block;
-  margin-top: 8px;
+  width: 80px;
+  height: 4px;
+  margin-top: 10px;
   border-radius: 3px;
+  background: linear-gradient(90deg, #00d4ff, #ffffff, #00d4ff);
+  background-size: 200% 100%;
+  animation: of-wave 2.5s linear infinite;
 }
 
-.footer-text {
+/* Wave animation */
+@keyframes of-wave {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* Text */
+.of-footer-text {
   font-size: 14px;
-  line-height: 1.7;
-  color: #bfcad3;
+  line-height: 1.8;
+  color: #d0dae6;
 }
 
 /* Links */
-.footer-links {
+.of-footer-links {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.footer-links li {
-  margin: 8px 0;
+.of-footer-links li {
+  margin-bottom: 10px;
 }
 
-.footer-links a {
-  color: #bfcad3;
+.of-footer-links a {
+  color: #d0dae6;
   text-decoration: none;
   font-size: 14px;
   transition: 0.3s;
 }
 
-.footer-links a:hover {
-  color: #00c6ff;
+.of-footer-links a:hover {
+  color: #00d4ff;
   padding-left: 6px;
 }
 
 /* Newsletter */
-.subscribe-form {
+.of-subscribe {
   display: flex;
-  margin-top: 12px;
-  background: #fff;
-  border-radius: 30px;
+  margin-top: 15px;
+  background: #ffffff;
+  border-radius: 5px;
   overflow: hidden;
 }
 
-.subscribe-form input {
+.of-subscribe input {
   flex: 1;
-  padding: 12px 16px;
   border: none;
+  padding: 12px;
   font-size: 14px;
   outline: none;
 }
 
-.subscribe-form button {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  border: none;
+.of-subscribe button {
+  background: #0a1f44;
   color: #fff;
+  border: none;
   padding: 12px 22px;
   cursor: pointer;
   font-weight: 600;
   transition: 0.3s;
 }
 
-.subscribe-form button:hover {
-  opacity: 0.85;
+.of-subscribe button:hover {
+  background: #0d3b66;
 }
 
-/* Copyright */
-.copyright {
-  background: #01080c;
+/* Bottom bar */
+.of-footer-bottom {
+  background: rgba(5, 15, 35, 0.9);
+  color: #c1ccda;
   text-align: center;
-  padding: 14px;
   font-size: 13px;
-  color: #8fa3b5;
+  padding: 15px 10px;
 }
 
-/* Animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  .footer {
+/* Responsive */
+@media (max-width: 768px) {
+  .of-footer-wrap {
+    flex-direction: column;
     text-align: center;
   }
 
-  .footer-title::after {
+  .of-footer-title::after {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .subscribe-form {
+  .of-subscribe {
     flex-direction: column;
-    border-radius: 10px;
   }
 
-  .subscribe-form button {
+  .of-subscribe button {
     width: 100%;
   }
 }
+
 
 /* =========================
    HERO MOBILE
