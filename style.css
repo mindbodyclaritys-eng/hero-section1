@@ -458,6 +458,88 @@ body {
 }
 
 /* =========================
+   EXTRA SMALL DEVICES (≤520px)
+========================= */
+@media (max-width: 520px) {
+
+  /* NAVBAR HEIGHT + PADDING */
+  .custom-navbar {
+    height: 64px;
+    padding: 0 18px;
+  }
+
+  /* LOGO FIX */
+  .logo {
+    font-size: 20px;
+    letter-spacing: 1px;
+  }
+
+  .logo-img {
+    transform: scale(1.6);
+    /* pehle 3 tha, mobile pe zyada tha */
+    width: 36px;
+    height: auto;
+  }
+
+  /* NAV LINKS DROPDOWN */
+  .nav-links {
+    top: 64px;
+    background: linear-gradient(rgba(10, 31, 68, 0.97),
+        rgba(13, 59, 102, 0.95));
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    height: 54px;
+    letter-spacing: 0.5px;
+  }
+
+  /* REMOVE UNDERLINE CROWDING */
+  .nav-links a::after {
+    bottom: 12px;
+  }
+
+  /* ACTION BUTTONS STACK */
+  .nav-actions {
+    gap: 10px;
+  }
+
+  .login-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .user-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  /* CART DROPDOWN FIX */
+  .fleet-card {
+    width: 200px;
+    right: -10px;
+  }
+
+  /* MODAL SIZE FIX */
+  .modal-content {
+    width: 90%;
+    padding: 22px 18px;
+  }
+
+  .modal-content h2 {
+    font-size: 18px;
+  }
+
+  /* HAMBURGER TOUCH AREA */
+  .menu-toggle span {
+    width: 22px;
+    height: 2.5px;
+  }
+}
+
+
+/* =========================
    HERO SECTION
 ========================= */
 .hero {
