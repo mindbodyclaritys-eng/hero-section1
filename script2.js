@@ -9,6 +9,40 @@ menuToggle.addEventListener("click", () => {
     menuToggle.classList.toggle("active"); // hamburger X animation
 });
 
+// MODAL OPEN/CLOSE
+const openModal = document.getElementById('openModal');
+const loginModal = document.getElementById('loginModal');
+const closeModal = document.getElementById('closeModal');
+openModal.addEventListener('click', () => (loginModal.style.display = 'flex'));
+closeModal.addEventListener('click', () => (loginModal.style.display = 'none'));
+window.addEventListener('click', (e) => {
+    if (e.target === loginModal) loginModal.style.display = 'none';
+});
+
+// SWITCH LOGIN/REGISTER
+const showRegister = document.getElementById('showRegister');
+const showLogin = document.getElementById('showLogin');
+const loginForm = document.getElementById('loginForm');
+const registerForm = document.getElementById('registerForm');
+showRegister.addEventListener('click', () => {
+    loginForm.style.display = 'none';
+    registerForm.style.display = 'block';
+});
+showLogin.addEventListener('click', () => {
+    loginForm.style.display = 'block';
+    registerForm.style.display = 'none';
+});
+const userIcon = document.getElementById('userIcon');
+const cartCard = document.getElementById('cartCard');
+cartCard.style.display = 'none';
+userIcon.addEventListener('click', (e) => {
+     e.stopPropagation();
+    cartCard.style.display = cartCard.style.display === 'none' ? 'none' : 'none';
+});
+window.addEventListener('click', (e) => {
+    if (!userIcon.contains(e.target) && !cartCard.contains(e.target)) cartCard.style.display = 'none';
+});
+
 // Multi-page active link logic
 const currentPath = window.location.pathname.split("/").pop(); // Get only file name
 
@@ -19,7 +53,7 @@ links.forEach(link => {
     // Get href file name only
     const linkPath = link.getAttribute("href").split("/").pop();
 
-    if(linkPath === currentPath) {
+    if (linkPath === currentPath) {
         link.classList.add("active");
     }
 
