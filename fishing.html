@@ -1,279 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style15.css">
-        <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style15.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap"
-        rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap"
+    rel="stylesheet">
 
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
+
 <body>
 
-      <nav class="custom-navbar" aria-label="Main Navigation" data-aos="zoom-in-down">
-        <div class="logo-cont">
+  <nav class="custom-navbar" aria-label="Main Navigation" data-aos="zoom-in-down">
+    <div class="logo-cont">
 
-            <div class="logo">OceanFleet</div>
-            <img class="logo-img" src="ocean1d.png" alt="">
-        </div>
-
-        <!-- Hamburger -->
-        <div class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-
-        <ul class="nav-links" id="navLinks">
-            <li><a href="./index.html" class="active">Home</a></li>
-            <li><a href="./gallery.html">Gallery</a></li>
-            <li><a href="./luxury.html">Luxury</a></li>
-            <li><a href="./sailing.html">Sailing</a></li>
-            <li><a href="./fishing.html">Fishing</a></li>
-            <li><a href="./about_us.html">About</a></li>
-            <li><a href="./contact_us.html">Contact us</a></li>
-
-        </ul>
-        <div class="nav-actions">
-            <button class="login-btn" id="openModal">Login</button>
-            <div class="user-icon" id="userIcon"><i class="fas fa-user"></i></div>
-            <div class="card" id="cartCard">
-                <h3><i class="fas fa-ship"></i> Your Cart</h3>
-                <div class="empty-cart">No ships added yet</div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- LOGIN 
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">L -->
-    <div class="
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">l" id="login
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">l">
-        <div class="
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">l-content">
-            <span class="close-btn" id="close
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">l">&times;</span>
-
-            <!-- LOGIN FORM -->
-            <div id="loginForm">
-                <h2>Login</h2>
-                <form>
-                    <input type="email" placeholder="Email" required />
-                    <input type="password" placeholder="Password" required />
-                    <button type="submit">Login</button>
-                    <button type="button" class="google-btn"><i class="fab fa-google"></i> Continue with
-                        Google</button>
-                </form>
-                <div class="switch-form">Don't have an account? <a id="showRegister">Register</a></div>
-            </div>
-
-            <!-- REGISTER FORM -->
-            <div id="registerForm" style="display:none;">
-                <h2>Register</h2>
-                <form>
-                    <input type="text" placeholder="Full Name" required />
-                    <input type="email" placeholder="Email" required />
-                    <input type="password" placeholder="Password" required />
-                    <button type="submit">Register</button>
-                    <button type="button" class="google-btn"><i class="fab fa-google"></i> Continue with
-                        Google</button>
-                </form>
-                <div class="switch-form">Already have an account? <a id="showLogin">Login</a></div>
-            </div>
-        </div>
+      <div class="logo">OceanFleet</div>
+      <img class="logo-img" src="ocean1d.png" alt="">
     </div>
 
+    <!-- Hamburger -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="row align-items-center">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="./index.html" class="active">Home</a></li>
+      <li><a href="./gallery.html">Gallery</a></li>
+      <li><a href="./luxury.html">Luxury</a></li>
+      <li><a href="./sailing.html">Sailing</a></li>
+      <li><a href="./fishing.html">Fishing</a></li>
+      <li><a href="./about_us.html">About</a></li>
+      <li><a href="./contact_us.html">Contact us</a></li>
 
-                <!-- TEXT SLIDER -->
-                <div class="col-md-6 text-white" data-aos="zoom-in-up">
-
-                    <!-- STATIC HEADING -->
-                    <h3>unforgettable sea journeys</h3>
-
-                    <!-- h4 SLIDER -->
-                    <div id="heroSlider" class="carousel slide carousel-fade mt-2" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-
-                            <div class="carousel-item active">
-                                <h4>Start Your Journey</h4>
-                            </div>
-
-                            <div class="carousel-item">
-                                <h4>Explore the Sea</h4>
-                            </div>
-
-                            <div class="carousel-item">
-                                <h4>Book Your Experience</h4>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <!-- BUTTON -->
-                    <a href="#" class="btn btn-primary mt-4">Book Your Cruise</a>
-
-                </div>
-
-
-                <!-- IMAGE -->
-                <div class="col-md-6 text-center" data-aos="zoom-in-right">
-                    <img src="boat1.png" class="img-fluid" alt="Ship">
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script src="script2.js"></script>
-
-
- <section class="shop">
-  <aside class="filters">
-    <h4>OCCASION</h4>
-    <label><input type="checkbox"> Fishing</label>
-    <label><input type="checkbox"> Luxury</label>
-    
-    <label><input type="checkbox"> Sailing</label>
-
-    <h4>DISCOUNT</h4>
-    <label><input type="checkbox"> 10% or More</label>
-    <label><input type="checkbox"> 20% or More</label>
-    <label><input type="checkbox"> 30% or More</label>
-
-    <h4>CUSTOMER REVIEW</h4>
-    <p>★★★★★ 5.0</p>
-    <p>★★★★☆ 4.0</p>
-    <p>★★★☆☆ 3.0</p>
-  </aside>
-  
-
-  <div class="products">
-    <h2 center>Our Fishing</h2>
-
-    <div class="grid">
-      <div class="card">
-        <span class="tag"></span>
-        <img src="https://duckworthboats.com/wp-content/uploads/2023/11/Duckworth-header-home-03.jpg" alt="Fishing Boat">
-      <h3> Duckworth 28 Offshore</h3>  <p> •  cabin includes a cuddy with cushions and lights</p>
-        <p class="price">$675.00</p>
-        <p class="stars">★★★★☆</p>
-      </div>
-
-      <div class="card">
-        <span class="tag">NEW</span>
-        <img src="https://www.rightboat.com/blogimages/misc/2876/Ranger_Z520R.jpg" alt="Fishing Boat">
-        <h3>small fishing boat</h3>
-        <p> • Tournament-ready electronics <br>•  trolling motor <br>•  high-performance design</p>
-        <p class="price">$655.00</p>
-        <p class="stars">★★★★☆</p>
-      </div>
-
-      <div class="card">
-        <span class="tag">NEW</span>
-        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTDvgqddAv9GvDR3SCa5Re9elLEXLTBRatY9jmHR_Nu-7RQhHUa" alt="Fishing Boat">
-        <h3>kingfisher boat</h3><p>
-           •  Fully equipped galley<br> •  versatile V-berth <br> •  a stand-up enclosed head
-        </p>
-        <p class="price">$895.00</p>
-        <p class="stars">★★★☆☆</p>
-      </div>
-      <div class="card">
-        <span class="tag">NEW</span>
-        <img src="https://images.unsplash.com/photo-1655523539874-e6c9aa4b5edd?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmlzaGluZyUyMGJvYXR8ZW58MHx8MHx8fDA%3D" alt="Fishing Boat">
-        <h3>Indusrial fishing boat</h3><p>
-       <br>   • prioritizing stability   <br> • space for fishing equipment over speed  <br> • luxury
- rod holders <br>  • fish boxes for storing the catch
-        </p>
-        <p class="price">$890.00</p>
-        <p class="stars">★★★☆☆</p>
-      </div>
-      <div class="card">
-        <span class="tag">NEW</span>
-        <img src="https://images.unsplash.com/photo-1559036211-aac71e257f9c?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Fishing Boat">
-        <h3>  Traditional wooden fishing boat</h3>
-        <p> •prioritizing stability <Br> • space for fishing equipment over speed or luxury
-
-</p>
-        <p class="price">$875.00</p>
-        <p class="stars">★★★☆☆</p>
-      </div>
-      <div class="card">
-        <span class="tag">NEW</span>
-        <img src="https://fishingbooker-prod-blog-backup.s3.amazonaws.com/blog/media/2019/02/14135550/Flybridge-charter-boat.jpg" alt="Fishing Boat">
-        <h3> Fish hunter</h3>
-        <p>  •  tall structure visible indicates outriggers  <br> •  a tower for trolling multiple lines  <br> •  spotting schools of fish from a distance. </p>
-        <p class="price">$775.00</p>
-        <p class="stars">★★★☆☆</p>
-      </div>
-      <div class="card">
-        <span class="tag">NEW</span>
-        <img src="https://www.marineinsight.com/wp-content/uploads/2024/05/Crabbers.png" alt="Fishing Boat">
-        <h3>  Four C's fishing boat</h3>
-        <p>• Equipped with rod holders<br> •  bait rigging station <br> •  transom fishbox. </p>
-        <p class="price">$975.00</p>
-        <p class="stars">★★★☆☆</p>
-      </div>
-      <div class="card">
-        <span class="tag">NEW</span>
-        <img src="https://www.galatiyachts.com/wp-content/uploads/Main-Blog-Photo-1630x928-67-1.jpg" alt="Fishing Boat">
-        <h3>  • Viking 82 Convertible boat</h3>
-        <p> Five staterooms <br> • six heads <br> • tournament-ready flybridge</p>
-        <p class="price">$791.00</p>
-        <p class="stars">★★★☆☆</p>
-      </div>
-      <div class="card">
-        <span class="tag">NEW</span>
-        <img src="https://www.galatiyachts.com/wp-content/uploads/Main-Blog-Photo-1630x928-1-2-825x470.jpg" alt="Fishing Boat">
-        <h3> Valhalla Boatworks V-55</h3>
-        <p>  •  Includes a Palm Beach-style helm layout <br> •  triple Garmin multi-function displays <br> •  1,200-gallon fuel capacity</p>
-        <p class="price">$599.00</p>
-        <p class="stars">★★★☆☆</p>
+    </ul>
+    <div class="nav-actions">
+      <button class="login-btn" id="openModal">Login</button>
+      <div class="user-icon" id="userIcon"><i class="fas fa-user"></i></div>
+      <div class="card" id="cartCard">
+        <h3><i class="fas fa-ship"></i> Your Cart</h3>
+        <div class="empty-cart">No ships added yet</div>
       </div>
     </div>
+  </nav>
+<!-- LOGIN MODAL -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+
+
+  <!-- LOGIN FORM -->
+  <div id="loginForm">
+    <h2>Login</h2>
+    <form>
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+      <button type="button" class="google-btn"><i class="fab fa-google"></i> Continue with
+        Google</button>
+    </form>
+    <div class="switch-form">Don't have an account? <a id="showRegister">Register</a></div>
   </div>
-</section>
- <section class="popular">
-  <h2>Popular Products</h2>
 
-  <div class="popular-grid">
-    <div class="item big">
-      <img src="https://features.boats.com/boat-content/files/2017/05/whaler-380.jpg" alt="">
-       <span>SHOP NOW</span>
-    </div>
-
-    <div class="item">
-      <img src="https://cdn.prod.website-files.com/6514168d626bd72be004677d/65c4daa9978105af33c62133_new-hero-bg.webp" alt="">
-      <span>SHOP NOW</span>
-    </div>
-
-    <div class="item">
-      <img src="https://images.boatsgroup.com/resize/1/18/62/2025-boston-whaler-380-outrage-power-9911862-20250815154119581-0.jpg?w=400&h=267&t=1755297720000&exact&format=webp" alt="">
-      <span>SHOP NOW</span>
-    </div>
-
-    <div class="item">
-      <img src="https://arenjensen.com/wp-content/uploads/2024/06/IMG_1807.webp" alt="">
-      <span>SHOP NOW</span>
-    </div>
+  <!-- REGISTER FORM -->
+  <div id="registerForm" style="display:none;">
+    <h2>Register</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Register</button>
+      <button type="button" class="google-btn"><i class="fab fa-google"></i> Continue with
+        Google</button>
+    </form>
+    <div class="switch-form">Already have an account? <a id="showLogin">Login</a></div>
   </div>
-</section>
+  </div>
+  </div>
+
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- TEXT SLIDER -->
+        <div class="col-md-6 text-white" data-aos="zoom-in-up">
+
+          <!-- STATIC HEADING -->
+          <h3>unforgettable sea journeys</h3>
+
+          <!-- h4 SLIDER -->
+          <div id="heroSlider" class="carousel slide carousel-fade mt-2" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+              <div class="carousel-item active">
+                <h4>Start Your Journey</h4>
+              </div>
+
+              <div class="carousel-item">
+                <h4>Explore the Sea</h4>
+              </div>
+
+              <div class="carousel-item">
+                <h4>Book Your Experience</h4>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- BUTTON -->
+          <a href="#" class="btn btn-primary mt-4">Book Your Cruise</a>
+
+        </div>
+
+
+        <!-- IMAGE -->
+        <div class="col-md-6 text-center" data-aos="zoom-in-right">
+          <img src="boat1.png" class="img-fluid" alt="Ship">
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script2.js"></script>
+
+
+  <section class="shop">
+    <aside class="filters">
+      <h4>OCCASION</h4>
+      <label><input type="checkbox"> Fishing</label>
+      <label><input type="checkbox"> Luxury</label>
+
+      <label><input type="checkbox"> Sailing</label>
+
+      <h4>DISCOUNT</h4>
+      <label><input type="checkbox"> 10% or More</label>
+      <label><input type="checkbox"> 20% or More</label>
+      <label><input type="checkbox"> 30% or More</label>
+
+      <h4>CUSTOMER REVIEW</h4>
+      <p>★★★★★ 5.0</p>
+      <p>★★★★☆ 4.0</p>
+      <p>★★★☆☆ 3.0</p>
+    </aside>
+
+
+    <div class="products">
+      <h2 center>Our Fishing</h2>
+
+      <div class="grid">
+        <div class="card">
+          <span class="tag"></span>
+          <img src="https://duckworthboats.com/wp-content/uploads/2023/11/Duckworth-header-home-03.jpg"
+            alt="Fishing Boat">
+          <h3> Duckworth 28 Offshore</h3>
+          <p> • cabin includes a cuddy with cushions and lights</p>
+          <p class="price">$675.00</p>
+          <p class="stars">★★★★☆</p>
+        </div>
+
+        <div class="card">
+          <span class="tag">NEW</span>
+          <img src="https://www.rightboat.com/blogimages/misc/2876/Ranger_Z520R.jpg" alt="Fishing Boat">
+          <h3>small fishing boat</h3>
+          <p> • Tournament-ready electronics <br>• trolling motor <br>• high-performance design</p>
+          <p class="price">$655.00</p>
+          <p class="stars">★★★★☆</p>
+        </div>
+
+        <div class="card">
+          <span class="tag">NEW</span>
+          <img
+            src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTDvgqddAv9GvDR3SCa5Re9elLEXLTBRatY9jmHR_Nu-7RQhHUa"
+            alt="Fishing Boat">
+          <h3>kingfisher boat</h3>
+          <p>
+            • Fully equipped galley<br> • versatile V-berth <br> • a stand-up enclosed head
+          </p>
+          <p class="price">$895.00</p>
+          <p class="stars">★★★☆☆</p>
+        </div>
+        <div class="card">
+          <span class="tag">NEW</span>
+          <img
+            src="https://images.unsplash.com/photo-1655523539874-e6c9aa4b5edd?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZmlzaGluZyUyMGJvYXR8ZW58MHx8MHx8fDA%3D"
+            alt="Fishing Boat">
+          <h3>Indusrial fishing boat</h3>
+          <p>
+            <br> • prioritizing stability <br> • space for fishing equipment over speed <br> • luxury
+            rod holders <br> • fish boxes for storing the catch
+          </p>
+          <p class="price">$890.00</p>
+          <p class="stars">★★★☆☆</p>
+        </div>
+        <div class="card">
+          <span class="tag">NEW</span>
+          <img
+            src="https://images.unsplash.com/photo-1559036211-aac71e257f9c?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="Fishing Boat">
+          <h3> Traditional wooden fishing boat</h3>
+          <p> •prioritizing stability <Br> • space for fishing equipment over speed or luxury
+
+          </p>
+          <p class="price">$875.00</p>
+          <p class="stars">★★★☆☆</p>
+        </div>
+        <div class="card">
+          <span class="tag">NEW</span>
+          <img
+            src="https://fishingbooker-prod-blog-backup.s3.amazonaws.com/blog/media/2019/02/14135550/Flybridge-charter-boat.jpg"
+            alt="Fishing Boat">
+          <h3> Fish hunter</h3>
+          <p> • tall structure visible indicates outriggers <br> • a tower for trolling multiple lines <br> • spotting
+            schools of fish from a distance. </p>
+          <p class="price">$775.00</p>
+          <p class="stars">★★★☆☆</p>
+        </div>
+        <div class="card">
+          <span class="tag">NEW</span>
+          <img src="https://www.marineinsight.com/wp-content/uploads/2024/05/Crabbers.png" alt="Fishing Boat">
+          <h3> Four C's fishing boat</h3>
+          <p>• Equipped with rod holders<br> • bait rigging station <br> • transom fishbox. </p>
+          <p class="price">$975.00</p>
+          <p class="stars">★★★☆☆</p>
+        </div>
+        <div class="card">
+          <span class="tag">NEW</span>
+          <img src="https://www.galatiyachts.com/wp-content/uploads/Main-Blog-Photo-1630x928-67-1.jpg"
+            alt="Fishing Boat">
+          <h3> • Viking 82 Convertible boat</h3>
+          <p> Five staterooms <br> • six heads <br> • tournament-ready flybridge</p>
+          <p class="price">$791.00</p>
+          <p class="stars">★★★☆☆</p>
+        </div>
+        <div class="card">
+          <span class="tag">NEW</span>
+          <img src="https://www.galatiyachts.com/wp-content/uploads/Main-Blog-Photo-1630x928-1-2-825x470.jpg"
+            alt="Fishing Boat">
+          <h3> Valhalla Boatworks V-55</h3>
+          <p> • Includes a Palm Beach-style helm layout <br> • triple Garmin multi-function displays <br> • 1,200-gallon
+            fuel capacity</p>
+          <p class="price">$599.00</p>
+          <p class="stars">★★★☆☆</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="popular">
+    <h2>Popular Products</h2>
+
+    <div class="popular-grid">
+      <div class="item big">
+        <img src="https://features.boats.com/boat-content/files/2017/05/whaler-380.jpg" alt="">
+        <span>SHOP NOW</span>
+      </div>
+
+      <div class="item">
+        <img src="https://cdn.prod.website-files.com/6514168d626bd72be004677d/65c4daa9978105af33c62133_new-hero-bg.webp"
+          alt="">
+        <span>SHOP NOW</span>
+      </div>
+
+      <div class="item">
+        <img
+          src="https://images.boatsgroup.com/resize/1/18/62/2025-boston-whaler-380-outrage-power-9911862-20250815154119581-0.jpg?w=400&h=267&t=1755297720000&exact&format=webp"
+          alt="">
+        <span>SHOP NOW</span>
+      </div>
+
+      <div class="item">
+        <img src="https://arenjensen.com/wp-content/uploads/2024/06/IMG_1807.webp" alt="">
+        <span>SHOP NOW</span>
+      </div>
+    </div>
+  </section>
 </body>
+
 </html>
