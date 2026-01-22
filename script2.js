@@ -10,11 +10,11 @@ menuToggle.addEventListener("click", () => {
 });
 
 // MODAL OPEN/CLOSE
-const openModal = document.getElementById('openModal');
+const openLoginModalBtn = document.getElementById('openModal');
 const loginModal = document.getElementById('loginModal');
-const closeModal = document.getElementById('closeModal');
-openModal.addEventListener('click', () => (loginModal.style.display = 'flex'));
-closeModal.addEventListener('click', () => (loginModal.style.display = 'none'));
+const closeLoginModal = document.getElementById('closeModal');
+openLoginModalBtn.addEventListener('click', () => (loginModal.style.display = 'flex'));
+closeLoginModal.addEventListener('click', () => (loginModal.style.display = 'none'));
 window.addEventListener('click', (e) => {
     if (e.target === loginModal) loginModal.style.display = 'none';
 });
