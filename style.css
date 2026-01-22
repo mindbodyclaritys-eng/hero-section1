@@ -168,7 +168,7 @@ body {
 
 
 /* CART CARD */
-.card {
+.fleet-card {
     display: none;            /* initially hidden */
     position: absolute;       /* absolute positioning */
     top: 60px;                /* distance from navbar */
