@@ -41,6 +41,11 @@
          text-align: center;
        }
 
+       .card h3 {
+         font-size: 22px;
+         margin-top: 8px;
+       }
+
        .card img {
          width: 100%;
          height: 180px;
