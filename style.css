@@ -785,6 +785,79 @@ body {
   padding: 15px 10px;
 }
 
+.sailing-heading {
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+  font-weight: bolder !important;
+  text-align: center;
+  font-size: 54px;
+  margin: 20px 0px;
+}
+
+.sailing-heading span {
+  display: inline-block;
+  position: relative;
+  animation: floatWords 3s ease-in-out infinite alternate;
+  transition: 0.3s;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 60, 255, 0.4), 0 0 12px rgba(0, 212, 255, 0.3);
+  margin: 0 6px;
+  font-weight: bolder;
+}
+
+
+
+/* FLOAT KEYFRAMES */
+@keyframes floatWords {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* HOVER EFFECT */
+.sailing-heading span:hover {
+  transform: scale(1.12);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 15px rgba(0, 60, 255, 0.5), 0 0 18px rgba(0, 212, 255, 0.5);
+  cursor: pointer;
+}
+
+/* Optional: small animated underline glow */
+.sailing-heading::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 5px;
+  margin: 15px auto 0;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #003cff, #00d4ff);
+  box-shadow: 0 0 12px rgba(0, 60, 255, 0.6);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.5;
+    transform: scaleX(0.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scaleX(1.1);
+  }
+
+  100% {
+    opacity: 0.5;
+    transform: scaleX(0.9);
+  }
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .of-footer-wrap {
