@@ -864,6 +864,10 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .of-footer-block {
+    flex: 1 1 170px;
+  }
+
   .of-footer-wrap {
     flex-direction: column;
     text-align: center;
