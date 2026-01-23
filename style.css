@@ -536,6 +536,10 @@ body {
     width: 22px;
     height: 2.5px;
   }
+
+  .display-none {
+    display: none;
+  }
 }
 
 
@@ -886,7 +890,16 @@ body {
 /* =========================
    HERO TEXT BREAK (1050px)
 ========================= */
+@media(max-width:1200px) {}
+
 @media (max-width: 1050px) {
+
+  .hero .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .hero h3 {
     font-size: 40px;
     /* headline chota */
@@ -930,4 +943,5 @@ body {
   .hero img {
     margin-top: 30px;
   }
+
 }
