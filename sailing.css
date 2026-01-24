@@ -771,6 +771,9 @@
   .popular-modal-content{
     width: 90%;
   }
+  #detailsOverlay .overlay-content{
+    margin: 15px;
+  }
 }
 
 @keyframes textMove {
