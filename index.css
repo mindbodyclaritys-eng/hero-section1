@@ -192,6 +192,17 @@ body {
   /* important: don't let flex affect layout */
 }
 
+.fleet-card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.4s;
+  backdrop-filter: blur(10px);
+  width: 200px;
+  right: -10px;
+}
+
 .card h3 {
   margin: 0 0 10px;
   color: #0fa8e3;
@@ -455,7 +466,8 @@ body {
   .nav-btn {
     margin: 15px 0;
   }
-  .login-modal-content{
+
+  .login-modal-content {
     width: 90%;
   }
 }
