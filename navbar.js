@@ -36,7 +36,7 @@ const userIcon = document.getElementById('userIcon');
 const cartCard = document.getElementById('cartCard');
 cartCard.style.display = 'none';
 userIcon.addEventListener('click', (e) => {
-     e.stopPropagation();
+    e.stopPropagation();
     cartCard.style.display = cartCard.style.display === 'none' ? 'block' : 'none';
 });
 window.addEventListener('click', (e) => {
@@ -61,6 +61,24 @@ links.forEach(link => {
     link.addEventListener("click", () => {
         navLinksContainer.classList.remove("show");
         menuToggle.classList.remove("active");
+    });
+});
+
+// arrow up
+const arrowBtn = document.querySelector('.arrowup-img');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 250) {
+        arrowBtn.classList.add('show');
+    } else {
+        arrowBtn.classList.remove('show');
+    }
+});
+
+arrowBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
 });
 

@@ -370,6 +370,36 @@ body {
   transform: rotate(-45deg) translate(6px, -6px);
 }
 
+/* arrow */
+.arrow-cont {
+  position: absolute;
+  top: 90vh;
+}
+
+.arrowup-img {
+  position: fixed;
+  width: 55px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+  z-index: 999;
+}
+
+/* show state */
+.arrowup-img.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* hover luxury feel */
+.arrowup-img:hover {
+  transform: translateY(-6px) scale(1.05);
+}
+
+
 /* =========================
    NAVBAR ANIMATION
 ========================= */
