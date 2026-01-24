@@ -175,3 +175,7 @@ function closePModal() {
 /* expose */
 window.closeModal = closeModal;
 window.closePModal = closePModal;
+AOS.init({
+  duration: 1000,   // animation speed (ms)
+  once: true        // ek dafa hi chale
+});
