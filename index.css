@@ -172,7 +172,7 @@ body {
 
 
 /* CART CARD */
-.fleet-card {
+.carrs .fleet-card {
   display: none;
   /* initially hidden */
   position: absolute;
@@ -519,7 +519,7 @@ body {
   }
 
   /* CART DROPDOWN FIX */
-  .fleet-card {
+  .carrs .fleet-card {
     width: 200px;
     right: -10px;
   }

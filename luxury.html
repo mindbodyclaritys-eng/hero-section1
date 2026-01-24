@@ -3,28 +3,26 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Marina Fleet & Popular Products</title>
+    <title>Popular Products | Ocean Fleet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="luxury.css">
-    <link rel="stylesheet" href="index.css">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="luxury.css">
+
+    <!-- Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap"
         rel="stylesheet">
 
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-
-    <!-- Bootstrap CSS -->
-
-
 </head>
 
 <body>
-
     <nav class="custom-navbar" aria-label="Main Navigation" data-aos="zoom-in-down">
         <div class="logo-cont">
 
@@ -142,67 +140,40 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="navbar.js"></script>
 
-
-    <!-- =================== FLEET + FILTER =================== -->
-    <section id="fleet-section">
-        <div class="fleet-container">
-
-            <!-- FILTER -->
-            <div class="filter-section">
-
-                <div class="filters">
-                    <button onclick="applyFilter('all')">All</button>
-                    <button onclick="applyFilter('luxury')">Luxury</button>
-                    <button onclick="applyFilter('sailing')">Sailing</button>
-                </div>
-
-                <h3>DISCOUNT</h3>
-                <label><input type="checkbox"> 5% or More</label>
-                <label><input type="checkbox"> 10% or More</label>
-                <label><input type="checkbox"> 20% or More</label>
-                <label><input type="checkbox"> 30% or More</label>
-
-                <h3>CUSTOMER REVIEW</h3>
-                <label><input type="radio" name="rating"> ★★★★★ 5.0</label>
-                <label><input type="radio" name="rating"> ★★★★☆ 4.0</label>
-                <label><input type="radio" name="rating"> ★★★☆☆ 3.5</label>
-            </div>
-
-            <!-- FLEET -->
-            <div class="fleet">
-                <h2 class="sailing-heading">
-                    <span>Luxury</span>
-                    <span>Section</span>
-                </h2>
-                <div class="cards" id="fleetCards"></div>
-            </div>
-
-        </div>
+    <!-- Luxury -->
+    <section class="fleet">
+        <h2 class="sailing-heading">
+            <span>Luxury</span>
+            <span>Yachts</span>
+        </h2>
+        <div class="cards" id="fleetCards"></div>
     </section>
 
-    <!-- =================== FLEET MODAL (ONLY ONE) =================== -->
-    <div class="fleet-modal" id="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <div class="modal-content">
-            <div class="modal-left">
-                <img id="mainImg" class="modal-main-img" src="" alt="">
-                <div class="modal-thumbnails" id="thumbs"></div>
-            </div>
-            <div class="modal-details" id="modalDetails"></div>
-        </div>
-    </div>
-
-    <!-- =================== POPULAR PRODUCTS =================== -->
+    <!-- Popular -->
     <section class="popular">
         <h2 class="sailing-heading">
             <span>Popular</span>
             <span>Products</span>
         </h2>
-
-        <div class="popular-cards" id="popularCards"></div>
+        <div class="popular-cards"></div>
     </section>
 
-    <!-- =================== POPULAR MODAL =================== -->
+    <!-- ================= LUXURY FLEET MODAL ================= -->
+    <div class="fleet-modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <div class="modal-content">
+            <div class="modal-left">
+                <img id="mainImg" class="modal-main-img" src="" alt="">
+                <div class="modal-thumbnails" id="thumbs"></div>
+            </div>
+
+            <div class="modal-details" id="modalDetails"></div>
+        </div>
+    </div>
+
+
+    <!-- ================= POPULAR PRODUCT MODAL ================= -->
     <div class="p-modal" id="pModal">
         <span class="close" onclick="closePModal()">&times;</span>
         <div class="p-modal-content">
@@ -214,49 +185,10 @@
         </div>
     </div>
 
-    <!-- =================== FOOTER =================== -->
-    <footer class="of-footer">
-        <div class="of-footer-wrap">
-
-            <div class="of-footer-block">
-                <h2 class="of-footer-title">OCEAN FLEET</h2>
-                <p class="of-footer-text">
-                    Ocean Fleet delivers premium maritime experiences with world-class vessels,
-                    trusted crew, and unforgettable journeys across the seas.
-                </p>
-            </div>
-
-            <div class="of-footer-block">
-                <h2 class="of-footer-title">QUICK LINKS</h2>
-                <ul class="of-footer-links">
-                    <li><a href="./index.html">Home</a></li>
-                    <li><a href="./about_us.html">About Us</a></li>
-                    <li><a href="./gallery.html">Our Fleet</a></li>
-                    <li><a href="./contact_us.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="of-footer-block">
-                <h2 class="of-footer-title">NEWSLETTER</h2>
-                <p class="of-footer-text">
-                    Subscribe for latest fleet updates and exclusive offers.
-                </p>
-                <div class="of-subscribe">
-                    <input type="email" placeholder="Enter your email">
-                    <button>Subscribe</button>
-                </div>
-            </div>
-
-        </div>
-    </footer>
-
-    <div class="of-footer-bottom">
-        © 2025 Ocean Fleet. All Rights Reserved.
-    </div>
-
-
-
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="luxury.js"></script>
+
 </body>
 
 </html>
