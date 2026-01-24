@@ -1,6 +1,6 @@
 /* ================= YACHT INTRO SECTION ================= */
 .yacht-intro {
-    background: linear-gradient(rgba(10, 31, 68, .9), rgba(13, 59, 102, .7));
+    background: linear-gradient(rgba(10, 31, 68, .9), rgba(13, 59, 102, .7))!important ;
     padding: 80px 20px;
 }
 
@@ -72,7 +72,6 @@
 /* ================= YACHT INTRO SECTION ================= */
 .yacht-intro {
     padding: 80px 20px;
-    background: linear-gradient(180deg, #0b1c2d, #071121);
 }
 
 .yacht-intro-container {
