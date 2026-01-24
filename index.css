@@ -215,7 +215,7 @@ body {
   z-index: 1000;
 }
 
-.modal-content {
+.login-modal-content {
   background: #fff;
   padding: 30px 25px;
   border-radius: 10px;
@@ -237,7 +237,7 @@ body {
   }
 }
 
-.modal-content h2 {
+.login-modal-content h2 {
   text-align: center;
   color: #0fa8e3;
   margin-bottom: 20px;
@@ -253,13 +253,13 @@ body {
 }
 
 /* FORM STYLING */
-.modal-content form {
+.login-modal-content form {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 
-.modal-content input {
+.login-modal-content input {
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
@@ -268,7 +268,7 @@ body {
   box-sizing: border-box;
 }
 
-.modal-content button {
+.login-modal-content button {
   padding: 12px;
   border: none;
   border-radius: 6px;
@@ -277,12 +277,12 @@ body {
   width: 100%;
 }
 
-.modal-content button[type="submit"] {
+.login-modal-content button[type="submit"] {
   background: #0fa8e3;
   color: #fff;
 }
 
-.modal-content button[type="submit"]:hover {
+.login-modal-content button[type="submit"]:hover {
   background: #0c7bb0;
 }
 
@@ -522,12 +522,12 @@ body {
   }
 
   /* MODAL SIZE FIX */
-  .modal-content {
+  .login-modal-content {
     width: 90%;
     padding: 22px 18px;
   }
 
-  .modal-content h2 {
+  .login-modal-content h2 {
     font-size: 18px;
   }
 
