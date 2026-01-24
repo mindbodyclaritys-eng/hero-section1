@@ -85,7 +85,3 @@ arrowBtn.addEventListener('click', () => {
 const navLogoImg = document.querySelector('.logo-img')
 navLogoImg.className = 'logo-img display-none'
 
-AOS.init({
-    duration: 1000,   // animation speed (ms)
-    once: true        // ek dafa hi chale
-});
