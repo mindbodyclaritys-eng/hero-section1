@@ -200,11 +200,7 @@ body {
 }
 
 /* fleet section cards */
-section.fleet .fleet-card {
-  position: relative;
-  right: auto;
-  width: 100%;
-}
+
 
 
 .card h3 {
