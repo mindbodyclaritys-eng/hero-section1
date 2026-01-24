@@ -1,6 +1,7 @@
 /* ================= PRICING SECTION ================= */
 .pricing-section {
   padding: 80px 20px;
+  background: linear-gradient(rgba(10, 31, 68, .9), rgba(13, 59, 102, .7));
   text-align: center;
 }
 
