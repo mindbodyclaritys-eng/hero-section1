@@ -3,22 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>Popular Products | Ocean Fleet</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marina Fleet</title>
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="pricing.css">
-    <link rel="stylesheet" href="yatch_intro.css">
-    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style26.css">
+
+    <!-- Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;400;600&display=swap"
         rel="stylesheet">
 
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
 </head>
 
 <body>
@@ -139,180 +140,54 @@
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script src="navbar.js"></script>
 
-    <section class="yacht-intro">
-        <div class="yacht-intro-container">
-
-            <!-- LEFT IMAGE -->
-            <div class="yacht-image">
-                <img src="https://cdn.pixabay.com/photo/2017/09/21/01/41/motor-yacht-2770341_1280.jpg"
-                    alt="Luxury Yacht">
-            </div>
-
-            <!-- RIGHT CONTENT -->
-            <div class="yacht-content">
-                <h2>Welcome to Our Yacht</h2>
-
-                <p>
-                    Today's yachts differ from other vessels by their leisure purpose.
-                    A yacht is any sail or power vessel used for pleasure, cruising, or racing.
-                </p>
-
-                <p>
-                    A yacht does not have to feature luxury accommodations to be classified
-                    as a yacht, but modern yachts are designed to deliver comfort, elegance,
-                    and unforgettable experiences at sea.
-                </p>
-
-                <a href="./gallery.html" class="yacht-btn">Explore Our Fleet</a>
-            </div>
-
-        </div>
+    <!-- Luxury -->
+    <section class="fleet">
+        <h2 class="sailing-heading">
+            <span>Luxury</span>
+            <span>Yachts</span>
+        </h2>
+        <div class="cards" id="fleetCards"></div>
     </section>
 
-    <section class="pricing-section">
-        <h1 class="pricing-title">Pricing Plans</h1>
-
-        <div class="pricing-cards">
-
-            <!-- CARD 1 -->
-            <div class="pricing-card">
-                <h3>East Coast Escape</h3>
-                <p class="from">From the East Coast</p>
-
-                <div class="price">
-                    <span class="currency">$</span>29
-                </div>
-
-                <p class="duration">10 Days • Round Trip (Ft. Lauderdale)</p>
-
-                <ul>
-                    <li>Free Dinner & Water</li>
-                    <li>Scenic Coastal Cruising</li>
-                    <li>Gatun Lake Experience</li>
-                </ul>
-
-                <button onclick="selectPlan('Ocean To Ocean', 49, '15 - 20 Days')">
-                    Select Plan
-                </button>
-            </div>
-
-            <!-- CARD 2 -->
-            <div class="pricing-card featured">
-                <h3>Ocean to Ocean</h3>
-                <p class="from">Premium One-Way Cruise</p>
-
-                <div class="price">
-                    <span class="currency">$</span>49
-                </div>
-
-                <p class="duration">15–20 Days • One Way</p>
-
-                <ul>
-                    <li>Free Dinner & Water</li>
-                    <li>Los Angeles – San Francisco</li>
-                    <li>Vancouver Route</li>
-                    <li>10 Luxury Seats</li>
-                </ul>
-
-                <button onclick="selectPlan('Ocean To Ocean', 49, '15 - 20 Days')">
-                    Select Plan
-                </button>
-            </div>
-
-            <!-- CARD 3 -->
-            <div class="pricing-card">
-                <h3>Five Destinations Tour</h3>
-                <p class="from">Best Value Package</p>
-
-                <div class="price">
-                    <span class="currency">$</span>69
-                </div>
-
-                <p class="duration">18–22 Days • Round Trip</p>
-
-                <ul>
-                    <li>Free Dinner, Wifi & Water</li>
-                    <li>Los Angeles, SF, Vancouver</li>
-                    <li>Gatun Lake Cruise</li>
-                    <li>16 Luxury Seats</li>
-                </ul>
-
-                <button onclick="selectPlan('Ocean To Ocean', 49, '15 - 20 Days')">
-                    Select Plan
-                </button>
-            </div>
-
-            <!-- CARD 4 -->
-            <div class="pricing-card premium">
-                <h3>West Coast Explorer</h3>
-                <p class="from">From the West Coast</p>
-
-                <div class="price">
-                    <span class="currency">$</span>99
-                </div>
-
-                <p class="duration">Round Trip • Los Angeles</p>
-
-                <ul>
-                    <li>Free Dinner, Wifi & Water</li>
-                    <li>Mayan Heritage Destinations</li>
-                    <li>Festive Coastal Ports</li>
-                    <li>15 Luxury Seats</li>
-                </ul>
-
-                <button onclick="selectPlan('Ocean To Ocean', 49, '15 - 20 Days')">
-                    Select Plan
-                </button>
-            </div>
-
-        </div>
+    <!-- Popular -->
+    <section class="popular">
+        <h2 class="sailing-heading">
+            <span>Popular</span>
+            <span>Products</span>
+        </h2>
+        <div class="popular-cards"></div>
     </section>
 
-    <footer class="of-footer">
-        <div class="of-footer-wrap">
+    <!-- ================= LUXURY FLEET MODAL ================= -->
+    <div class="fleet-modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
 
-            <div class="of-footer-block">
-                <h2 class="of-footer-title">OCEAN FLEET</h2>
-                <p class="of-footer-text">
-                    Ocean Fleet delivers premium marine experiences,
-                    luxury yachts, and professional fleet services
-                    designed for unforgettable sea adventures.
-                </p>
+        <div class="modal-content">
+            <div class="modal-left">
+                <img id="mainImg" class="modal-main-img" src="" alt="">
+                <div class="modal-thumbnails" id="thumbs"></div>
             </div>
 
-            <div class="of-footer-block">
-                <h2 class="of-footer-title">QUICK LINKS</h2>
-                <ul class="of-footer-links">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Fleet</a></li>
-                    <li><a href="#">Luxury</a></li>
-                    <li><a href="#">Gallery</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="of-footer-block">
-                <h2 class="of-footer-title">NEWSLETTER</h2>
-                <p class="of-footer-text">
-                    Get updates, exclusive offers and
-                    Ocean Fleet news straight to your inbox.
-                </p>
-
-                <div class="of-subscribe">
-                    <input type="email" placeholder="Enter your email">
-                    <button type="button">Subscribe</button>
-                </div>
-            </div>
-
+            <div class="modal-details" id="modalDetails"></div>
         </div>
-    </footer>
-
-    <div class="of-footer-bottom">
-        © 2025 Ocean Fleet • All Rights Reserved
     </div>
 
 
-    <script src="price.js"></script>
+    <!-- ================= POPULAR PRODUCT MODAL ================= -->
+    <div class="p-modal" id="pModal">
+        <span class="close" onclick="closePModal()">&times;</span>
+        <div class="p-modal-content">
+            <img id="pMainImg" src="" alt="">
+            <div class="p-modal-details">
+                <div id="pModalDetails"></div>
+                <div class="p-modal-thumbnails" id="pThumbs"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="luxury.js"></script>
 
 </body>
 
