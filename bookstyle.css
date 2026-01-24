@@ -1,0 +1,188 @@
+
+
+        .booking-container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 20px;
+            display: flex;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        /* ================= LEFT FORM ================= */
+        .booking-form {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .booking-form h2 {
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #ccc;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background: #f3f3f3;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-left: 4px solid #00d8ff;
+        }
+
+        .book-btn {
+            width: 100%;
+            margin-top: 15px;
+            padding: 14px;
+            background: linear-gradient(135deg, #00d8ff, #007bb3);
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.4s;
+        }
+
+        .book-btn:hover {
+            background: linear-gradient(135deg, gold, #ffcf40);
+            color: #111;
+            transform: translateY(-3px);
+        }
+
+        /* ================= RIGHT SUMMARY ================= */
+        .booking-summary {
+            flex: 0 0 320px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 25px;
+            height: fit-content;
+        }
+
+        .booking-summary h3 {
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            font-size: 14px;
+            color: #ccc;
+        }
+
+        .summary-item strong {
+            color: #fff;
+        }
+
+        .total {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 18px;
+            font-weight: bold;
+            color: #00d8ff;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* ================= RESPONSIVE ================= */
+        /* ================= EXTRA RESPONSIVE FIXES ================= */
+
+        /* Tablets */
+        @media (max-width: 992px) {
+            .booking-container {
+                gap: 25px;
+                margin: 40px auto;
+            }
+
+            .booking-form h2 {
+                font-size: 24px;
+            }
+
+            .booking-summary h3 {
+                font-size: 20px;
+            }
+        }
+
+        /* Mobile Devices */
+        @media (max-width: 768px) {
+            .booking-container {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .booking-form,
+            .booking-summary {
+                width: 90%;
+                margin: auto;
+                padding: 20px;
+            }
+
+            .booking-form h2 {
+                text-align: center;
+            }
+
+            .book-btn {
+                font-size: 15px;
+                padding: 12px;
+            }
+        }
+
+        /* Small Mobiles */
+        @media (max-width: 480px) {
+            body {
+                font-size: 14px;
+            }
+
+            .booking-form {
+                padding: 18px;
+            }
+
+            .booking-form h2 {
+                font-size: 22px;
+            }
+
+            .form-group label {
+                font-size: 13px;
+            }
+
+            .form-group input,
+            .form-group select {
+                padding: 10px;
+                font-size: 13px;
+                width: 90%;
+            }
+
+            .booking-summary {
+                padding: 18px;
+            }
+
+            .summary-item {
+                font-size: 13px;
+            }
+
+            .total {
+                font-size: 16px;
+            }
+        }

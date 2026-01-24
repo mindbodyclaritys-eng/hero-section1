@@ -1,0 +1,173 @@
+/* ================= PRICING SECTION ================= */
+.pricing-section {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #071121, #0b1c2d);
+  text-align: center;
+}
+
+.pricing-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 60px;
+  letter-spacing: 1px;
+}
+
+/* ================= PRICING GRID ================= */
+.pricing-cards {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* ================= CARD BASE ================= */
+.pricing-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-radius: 22px;
+  padding: 35px 25px;
+  color: #fff;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.45s ease;
+}
+
+/* subtle border glow */
+.pricing-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+}
+
+/* ================= HEADINGS ================= */
+.pricing-card h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+}
+
+.pricing-card .from {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 25px;
+}
+
+/* ================= PRICE ================= */
+.price {
+  font-size: 48px;
+  font-weight: 800;
+  color: #00d8ff;
+  margin-bottom: 10px;
+}
+
+.price .currency {
+  font-size: 22px;
+  vertical-align: super;
+}
+
+/* ================= META ================= */
+.duration {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 25px;
+}
+
+/* ================= FEATURES ================= */
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+}
+
+.pricing-card ul li {
+  font-size: 14px;
+  padding: 8px 0;
+  color: #ddd;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pricing-card ul li:last-child {
+  border-bottom: none;
+}
+
+/* ================= BUTTON ================= */
+.pricing-card button {
+  background: linear-gradient(135deg, #00d8ff, #007bb3);
+  color: #02121f;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.pricing-card button:hover {
+  background: linear-gradient(135deg, gold, #ffcf40);
+  color: #111;
+  transform: translateY(-3px);
+}
+
+/* ================= HOVER EFFECT ================= */
+.pricing-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 0 35px rgba(0, 200, 255, 0.5);
+}
+
+/* ================= FEATURED (CENTER CARD) ================= */
+.pricing-card.featured {
+  background: linear-gradient(145deg, #0f2a40, #0b1c2d);
+  transform: scale(1.06);
+  box-shadow: 0 0 40px rgba(0, 200, 255, 0.7);
+}
+
+.pricing-card.featured::after {
+  content: "Most Popular";
+  position: absolute;
+  top: 18px;
+  right: -45px;
+  background: gold;
+  color: #111;
+  padding: 6px 55px;
+  font-size: 12px;
+  font-weight: 700;
+  transform: rotate(45deg);
+}
+
+/* ================= PREMIUM CARD ================= */
+.pricing-card.premium {
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+.pricing-card.premium .price {
+  color: gold;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .pricing-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing-title {
+    font-size: 28px;
+  }
+
+  .pricing-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card.featured {
+    transform: none;
+  }
+}
