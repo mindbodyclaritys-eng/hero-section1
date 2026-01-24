@@ -192,16 +192,20 @@ body {
   /* important: don't let flex affect layout */
 }
 
-.fleet-card {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 18px;
-  overflow: hidden;
-  cursor: pointer;
-  transition: 0.4s;
-  backdrop-filter: blur(10px);
+/* ONLY cart area */
+.nav-actions .fleet-card {
   width: 200px;
   right: -10px;
+  position: absolute;
 }
+
+/* fleet section cards */
+section.fleet .fleet-card {
+  position: relative;
+  right: auto;
+  width: 100%;
+}
+
 
 .card h3 {
   margin: 0 0 10px;
