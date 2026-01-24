@@ -1,276 +1,535 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="gallery.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="gallery.css">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap"
+    rel="stylesheet">
+
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
+
 <body>
 
-    <section class="gallery">
-  <h2>Our Boat Gallery</h2>
 
-  <div class="gallery-container">
-      
+  <nav class="custom-navbar" aria-label="Main Navigation" data-aos="zoom-in-down">
+    <div class="logo-cont">
 
-    <!-- Boat Card -->
-
-    <div class="boat-card">
-  <img src="https://www.travelandleisure.com/thmb/6XEOwgJH_NQIdQImwj5AV36F4Ks=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/somnio-superyacht-exterior-night-SUPERYACHT1121-dd7f29e1d8dd430b91bbff6296207063.jpg" alt="Super Luxury Yacht">
-  <div class="boat-info">
-     <h3>Super Luxury Yacht</h3> <p> 📍 Elite Marina Dock<br>• Premium Interior<br> • AC Lounge<br> • Private Crew </p>
+      <div class="logo">OceanFleet</div>
+      <img class="logo-img" src="ocean1d.png" alt="">
     </div>
-</div>
-    <div class="boat-card">
-      <img src="https://i0.wp.com/www.theluxeinsider.com/wp-content/uploads/2023/10/superyach-2.jpg?fit=1200%2C800&ssl=1" alt="Luxury Boat">
-      <div class="boat-info">
-         <h3> 📍Luxury Yacht</h3> <p>• Length: 40ft<br>• Capacity: 10 People<br>• AC Cabin<br>• Music System</p>  
-        </div>
+
+    <!-- Hamburger -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-    <div class="boat-card">
-      <img src="https://cdn.samboat.co.uk/announcements-v2/654040e2a4e24-l.jpeg" alt="Speed Boat">
-      <div class="boat-info">
-        <h3>📍Speed Boat</h3> <p> High Speed<br>• Safety Jackets<br>• Water Sports Ready</p>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="./index.html" class="active">Home</a></li>
+      <li><a href="./gallery.html">Gallery</a></li>
+      <li><a href="./luxury.html">Luxury</a></li>
+      <li><a href="./sailing.html">Sailing</a></li>
+      <li><a href="./fishing.html">Fishing</a></li>
+      <li><a href="./about_us.html">About</a></li>
+      <li><a href="./contact_us.html">Contact us</a></li>
+
+    </ul>
+    <div class="nav-actions">
+      <button class="login-btn" id="openModal">Login</button>
+      <div class="user-icon" id="userIcon"><i class="fas fa-user"></i></div>
+      <div class="card" id="cartCard">
+        <h3><i class="fas fa-ship"></i> Your Cart</h3>
+        <div class="empty-cart">No ships added yet</div>
       </div>
     </div>
-    <div class="boat-card">
-      <img src="https://features.boats.com/boat-content/files/2017/05/whaler-380.jpg" alt="Fishing Boat">
-      <div class="boat-info"> 
-         <h3> 📍Fishing Boat</h3>  <p>• GPS System<br>• Fishing Equipment<br>• Strong Engine</p>
+  </nav>
+
+  <!-- LOGIN MODAL -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModal">&times;</span>
+
+      <!-- LOGIN FORM -->
+      <div id="loginForm">
+        <h2>Login</h2>
+        <form>
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Login</button>
+          <button type="button" class="google-btn"><i class="fab fa-google"></i> Continue with
+            Google</button>
+        </form>
+        <div class="switch-form">Don't have an account? <a id="showRegister">Register</a></div>
+      </div>
+
+      <!-- REGISTER FORM -->
+      <div id="registerForm" style="display:none;">
+        <h2>Register</h2>
+        <form>
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email" required />
+          <input type="password" placeholder="Password" required />
+          <button type="submit">Register</button>
+          <button type="button" class="google-btn"><i class="fab fa-google"></i> Continue with
+            Google</button>
+        </form>
+        <div class="switch-form">Already have an account? <a id="showLogin">Login</a></div>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center">
+
+        <!-- TEXT SLIDER -->
+        <div class="col-md-6 text-white" data-aos="zoom-in-up">
+
+          <!-- STATIC HEADING -->
+          <h3>Memorable sea journeys</h3>
+
+          <!-- h4 SLIDER -->
+          <div id="heroSlider" class="carousel slide carousel-fade mt-2" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+              <div class="carousel-item active">
+                <h4>Start Your Journey</h4>
+              </div>
+
+              <div class="carousel-item">
+                <h4>Explore the Sea</h4>
+              </div>
+
+              <div class="carousel-item">
+                <h4>Book Your Experience</h4>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- BUTTON -->
+          <a href="#" class="btn btn-primary mt-4">Book Your Cruise</a>
+
         </div>
-    </div>
-     <div class="boat-card">
-  <img src="https://image.made-in-china.com/365f3j00swMokVvBiqbe/Allhouse-2024-Prefabricated-Water-Floating-House-Luxury-Deluxe-Pontoon-Houseboat.webp" alt="House Boat">
-  <div class="boat-info"> 
-    <h3>House Boat</h3> <p>📍 Lake Side Dock, Dubai<br> • Bedrooms<br>• Kitchen<br>• Family Friendly </p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f9/02/e4/caption.jpg?w=1200&h=-1&s=1" alt="Party Boat">
-  <div class="boat-info"> 
-    <h3>Party Boat</h3>  <p> 📍 Marina Walk Pier 3<br>• DJ Music<br>• LED Lights<br> • Event Space</p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://c8.alamy.com/comp/2ANWHFX/tourists-on-an-open-top-river-cruise-tour-boat-on-the-thames-london-uk-2ANWHFX.jpg" alt="Tourist Boat">
-  <div class="boat-info">
-    <h3>Tourist Boat</h3> <p>📍 City Cruise Terminal<br>• Sightseeing<br>• Tour Guide<br>• Comfortable Seat</p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://sailsandiego.com/wp-content/uploads/2025/02/assets-homeCard-SunsetSail-1-768x653.jpg" alt="Sail Boat">
-  <div class="boat-info"> 
-    <h3>Sail Boat</h3><p>📍 Wind Harbor Marina<br>• Wind Sailing<br>• Eco Friendly<br>• Training Available </p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://as1.ftcdn.net/v2/jpg/01/24/27/30/1000_F_124273079_ZHuBjV9p2Im0LZYcKH82C6bcaQrjRxtq.jpg" alt="Motor Boat">
-  <div class="boat-info">
-    <h3>Motor Boat</h3><p>📍  Blue Water Dock<br>• Fast Engine<br> • Easy Control<br> • Small Groups</p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://www.catamaran-charter-greece.com/wp-content/uploads/2024/05/Choose-the-Right-Catamaran-1.webp" alt="Catamaran">
-  <div class="boat-info">
-    <h3>Catamaran</h3><p>📍 Twin Hull Dock<br>• Stable Ride<br>• Large Deck<br>• Party Friend</p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://www.madisonboats.com/wp-content/uploads/Marshall-Boats-Location.jpg" alt="Pontoon Boat">
-  <div class="boat-info"> <h3>Pontoon Boat</h3> <p>📍Lake View Jetty<br>• Flat Surface<br>• Family Use<br>• Safe Ride </p></div>
-</div>
-<div class="boat-card">
-  <img src="https://miamicharters.com/wp-content/uploads/2019/11/1-SPEED-YACHTS-1.jpg" alt="Offshore Speed Boat">
-  <div class="boat-info">
-    <h3>Offshore Speed Boat</h3>
-    <p> 📍 Ocean Racing Dock<br>• Extreme Speed<br>• Safety Gear<br> • Sport Design</p></div>
-</div>
-<div class="boat-card">
-  <img src="https://bigmarlinpuntacana.com/wp-content/uploads/2023/03/luhrs-fishing-boat-charter01.jpg" alt="Deep Sea Fishing Boat">
-  <div class="boat-info">
-    <h3>Deep Sea Fishing Boat</h3><p>📍 Fisherman Harbor<br>• Fish Finder<br> • GPS System<br>• Storage Deck  </p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://traveldanang.org/wp-content/uploads/dragn-boat-floating-restaurant-1.jpg" alt="Floating Restaurant Boat">
-  <div class="boat-info">
-    <h3>Floating Restaurant Boat</h3> <p> 📍 Riverfront Dock<br>  • Dining Area<br>  • Kitchen<br>  • Family Seating</p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/13/17/fa/02.jpg" alt="Sunset Cruise Boat">
-  <div class="boat-info">
-     <h3>Sunset Cruise Boat</h3>  <p>📍 Sunset Point Marina<br> • Romantic View<br>  • Open Deck<br>  • Soft Music </p>
-    </div>
-</div>
-<div class="boat-card">
-  <img src="https://robbreport.com/wp-content/uploads/2022/04/5.-NAVIER-FOILING-DAYLIGHT-1.jpg?w=800" alt="Electric Boat">
-  <div class="boat-info"> 
-    <h3>Electric Boat</h3>  <p>📍 Green Marina<br>• Eco Friendly<br>   • Silent Ride<br> • Low Cost </p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://media.licdn.com/dms/image/v2/D4D12AQFI41plDFxAaw/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1706098745209?e=2147483647&v=beta&t=I8DOx-B4lpBIBkx0igT3nKnlPp9kK2ptrFcJ8Jr2KPA" alt="Rescue Lifeboat">
-  <div class="boat-info">
-     <h3>Rescue Lifeboat</h3> <p> 📍 Emergency Dock<br> • Medical Kit<br>• Fast Response<br> • Strong Body</p>
-    </div>
-</div>
-<div class="boat-card">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/USCG_response_boat_medium_45607_Yorktown.jpg" alt="Coast Guard Boat">
-  <div class="boat-info">
-    <h3>Coast Guard Boat</h3> <p>📍 Security Marina<br> • Surveillance<br>• Radio Control<br> • Heavy Duty</p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://yacht-zoo.com/wp-content/uploads/2019/12/m-y-dynasty-sunrise-11.jpg" alt="Private Charter Yacht">
-  <div class="boat-info">
-    <h3>Private Charter Yacht</h3> <p>📍 Private Dock<br>• Luxury Seating<br> • Crew Service<br>  • Privacy </p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/df/17/16/canal-cruise-sin-amsterdam.jpg?w=1200&h=-1&s=1" alt="Canal Tour Boat">
-  <div class="boat-info">
-     <h3>Canal Tour Boat</h3><p>📍 Canal Side Dock<br> • City Tour<br> • Guide Available<br> • Safe Ride </p>
-    </div>
-</div>
-<div class="boat-card">
-  <img src="https://www.chicagowatertaxi.com/wp-content/uploads/2019/03/20150813-IMG_0357-1.jpg" alt="River Taxi">
-  <div class="boat-info">
-    <h3>River Taxi</h3> <p>📍 River Transport Hub<br> • Quick Travel<br>• Daily Service<br>  • Covered Seating</p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://thumbs.dreamstime.com/b/open-pool-last-deck-cruise-ship-area-used-also-outdoor-parties-loud-music-picture-msc-fantasia-109603596.jpg" alt="Open Deck Cruise">
-  <div class="boat-info">
-    <h3>Open Deck Cruise</h3> <p>  📍 Cruise Terminal<br>  • Open Air Deck<br>  • Sea View<br> • Group Friendly</p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://funboattours.com/wp-content/uploads/2022/11/dolphin4.jpg" alt="Dolphin Watching Boat">
-  <div class="boat-info">
-    <h3>Dolphin Watching Boat</h3><p>  📍 Wildlife Harbor<br> • Nature Tour<br> • Safe Viewing<br> • Guide Support </p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://www.shearwatervictoriafalls.com/wp-content/uploads/2020/03/Shearwater-Jetboat-main.jpg" alt="Jet Boat">
-  <div class="boat-info">
-    <h3>Adventure Jet Boat</h3>  <p>📍 Adventure Dock<br>• High Power Jet<br>• Sharp Turns<br> • Thrill Ride</p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://www.shouf.io/cdn/shop/files/muscat-traditional-dhow-boat-sunset-cruise-with-refreshments-167827.jpg?v=1744347923" alt="Traditional Dhow">
-  <div class="boat-info"> 
-    <h3>Traditional Dhow</h3> <p>  📍 Heritage Harbor<br> • Cultural Design<br> • Wooden Body<br>• Calm Ride</p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://www.racewinningbrands.com/wp-content/uploads/2024/01/CO9A0670-1-scaled.jpg" alt="Racing Boat">
-  <div class="boat-info">
-    <h3>Racing Boat</h3>
-    <p>📍 Racing Marina<br>• High Performance<br>  • Sport Engine<br> • Lightweight
-    </p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://sika.scene7.com/is/image/sika/glo-motor-boat-ship-marine-yacht:16-9?wid=1920&hei=1080&fit=crop%2C1" alt="Leisure Boat">
-  <div class="boat-info">
-    <h3>Leisure Boat</h3>
-    <p> 📍 Family Dock<br> • Relax Ride<br> • Easy Control<br> • Safe Design </p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://www.bmt.org/media/2655/offshore-energy-banner.jpg?anchor=center&mode=crop&width=1920&height=800&rnd=132813923550000000" alt="Crew Transfer Vessel">
-  <div class="boat-info">
-    <h3>Crew Transfer Vessel</h3>
-    <p>  📍 Service Port<br>   • Staff Transport<br>   • Strong Hull<br> • Reliable Engine</p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://www.rssailing.com/wp-content/uploads/2021/01/RSQuest_Asymmetric.jpg" alt="Training Sail Boat">
-  <div class="boat-info">
-    <h3>Training Sail Boat</h3>
-    <p> 📍 Sailing Club Dock<br> • Training Purpose<br> • Safety Support<br> • Instructor </p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://thumbs.dreamstime.com/b/traditional-old-wooden-sailing-boat-russian-samara-russia-may-heritage-village-traditional-old-wooden-sailing-boat-78871151.jpg" alt="Heritage Wooden Boat">
-  <div class="boat-info">
-    <h3>Heritage Wooden Boat</h3>
-    <p>  📍 Old Port Marina<br> • Classic Style<br> • Handcrafted<br> • Photography </p>
-  </div>
-  </div>
-    
-  <div class="boat-card">
-  <img src="https://www.tuvie.com/wp-content/uploads/electra-hydrofoil-ferry-concept1.jpg" alt="Hydrofoil Boat">
-  <div class="boat-info">
-    <h3>Hydrofoil Boat</h3>
-    <p>📍 Speed Marina<br>• High Speed<br>• Lift above water<br>• Racing Design</p>
-  </div>
-</div>
 
-<div class="boat-card">
-  <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0f/1d/9b/61.jpg" alt="Icebreaker Ship">
-  <div class="boat-info">
-    <h3>Icebreaker Ship</h3>
-    <p>📍 Polar Harbor<br>• Thick Hull<br>• Frozen Waters<br>• Heavy Duty Engine</p>
-  </div>
-</div>
 
-<div class="boat-card">
-<img src="https://www.yachtingnews.com/wp-content/uploads/2016/03/montenegro-porto.jpg" alt="">
-<div class="boat-info">
-<h3>Harbor Yacht</h3>
-<p>📍 Hong Kong<br>• Smooth Sailing<br>• GPS System<br>• Safety Gear</p>
-</div>
-</div>     
-<div class="boat-card">
-  <img src="https://cdn.northropandjohnson.com/uploads/NITA-K-II-1.jpg?w=1920&h=1080&fit=crop" alt="Below Deck Adventure Yacht">
-  <div class="boat-info"> <h3>Below Deck Adventure Yacht</h3>
-    <p>📍 Caribbean<br>  • like E-foils, jet skis<br> • 30 Guest Cabins<br>  • Watersports & Jet Skis<br>• Long-Range Expedition</p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://cdn.boatinternational.com/convert/listing/2023/01/b82defe0-9038-11ed-af00-9f6e2a9c4532-FAMILY_superyacht_for_sale_charter_01.jpg/r%5Bwidth%5D=1920/b82defe0-9038-11ed-af00-9f6e2a9c4532-FAMILY_superyacht_for_sale_charter_01.jpg" alt="Family Adventure Yacht">
-  <div class="boat-info">
-    <h3>Family Adventure Yacht</h3> <p>📍 Bahamas<br>• 4 Crew Members<br> • 25 Guest Cabins<br>• Kayaks & Paddleboards<br>• Long-Range Cruising</p>
-  </div>
-</div>
-<div class="boat-card">
-    <img src="https://yatcowpmedialibrary.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2025/04/yacht-with-helipad-3.jpg" alt="Heli Yacht">
-    <div class="boat-info">
-      <h3>Heli Yacht</h3> <p>📍 Thailand<br>  • retractable helipads <br>  •  specialized lighting <br>   • Helicopter Pad & Jet Skis</p>
+        <!-- IMAGE -->
+        <div class="col-md-6 text-center" data-aos="zoom-in-right">
+          <img src="boat1.png" class="img-fluid" alt="Ship">
+        </div>
+
+      </div>
     </div>
-  </div>
-    <div class="boat-card">
-    <img src="https://d2qh54gyqi6t5f.cloudfront.net/images/misc/2030/superyacht.jpg" alt="Mega Yacht">
-    <div class="boat-info"><h3>Mega Yacht</h3> <p>📍 Monaco<br>  • 10 Crew<br>  • 50 Guest Cabins<br> • Luxury Amenities & Skis<p>
+  </section>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script2.js"></script>
+
+
+  <section class="gallery">
+    <h2>Our Boat Gallery</h2>
+
+    <div class="gallery-container">
+
+
+      <!-- Boat Card -->
+
+      <div class="boat-card">
+        <img
+          src="https://www.travelandleisure.com/thmb/6XEOwgJH_NQIdQImwj5AV36F4Ks=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/somnio-superyacht-exterior-night-SUPERYACHT1121-dd7f29e1d8dd430b91bbff6296207063.jpg"
+          alt="Super Luxury Yacht">
+        <div class="boat-info">
+          <h3>Super Luxury Yacht</h3>
+          <p> 📍 Elite Marina Dock<br>• Premium Interior<br> • AC Lounge<br> • Private Crew </p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img
+          src="https://i0.wp.com/www.theluxeinsider.com/wp-content/uploads/2023/10/superyach-2.jpg?fit=1200%2C800&ssl=1"
+          alt="Luxury Boat">
+        <div class="boat-info">
+          <h3> 📍Luxury Yacht</h3>
+          <p>• Length: 40ft<br>• Capacity: 10 People<br>• AC Cabin<br>• Music System</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://cdn.samboat.co.uk/announcements-v2/654040e2a4e24-l.jpeg" alt="Speed Boat">
+        <div class="boat-info">
+          <h3>📍Speed Boat</h3>
+          <p> High Speed<br>• Safety Jackets<br>• Water Sports Ready</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://features.boats.com/boat-content/files/2017/05/whaler-380.jpg" alt="Fishing Boat">
+        <div class="boat-info">
+          <h3> 📍Fishing Boat</h3>
+          <p>• GPS System<br>• Fishing Equipment<br>• Strong Engine</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img
+          src="https://image.made-in-china.com/365f3j00swMokVvBiqbe/Allhouse-2024-Prefabricated-Water-Floating-House-Luxury-Deluxe-Pontoon-Houseboat.webp"
+          alt="House Boat">
+        <div class="boat-info">
+          <h3>House Boat</h3>
+          <p>📍 Lake Side Dock, Dubai<br> • Bedrooms<br>• Kitchen<br>• Family Friendly </p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f9/02/e4/caption.jpg?w=1200&h=-1&s=1"
+          alt="Party Boat">
+        <div class="boat-info">
+          <h3>Party Boat</h3>
+          <p> 📍 Marina Walk Pier 3<br>• DJ Music<br>• LED Lights<br> • Event Space</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img
+          src="https://c8.alamy.com/comp/2ANWHFX/tourists-on-an-open-top-river-cruise-tour-boat-on-the-thames-london-uk-2ANWHFX.jpg"
+          alt="Tourist Boat">
+        <div class="boat-info">
+          <h3>Tourist Boat</h3>
+          <p>📍 City Cruise Terminal<br>• Sightseeing<br>• Tour Guide<br>• Comfortable Seat</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://sailsandiego.com/wp-content/uploads/2025/02/assets-homeCard-SunsetSail-1-768x653.jpg"
+          alt="Sail Boat">
+        <div class="boat-info">
+          <h3>Sail Boat</h3>
+          <p>📍 Wind Harbor Marina<br>• Wind Sailing<br>• Eco Friendly<br>• Training Available </p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://as1.ftcdn.net/v2/jpg/01/24/27/30/1000_F_124273079_ZHuBjV9p2Im0LZYcKH82C6bcaQrjRxtq.jpg"
+          alt="Motor Boat">
+        <div class="boat-info">
+          <h3>Motor Boat</h3>
+          <p>📍 Blue Water Dock<br>• Fast Engine<br> • Easy Control<br> • Small Groups</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://www.catamaran-charter-greece.com/wp-content/uploads/2024/05/Choose-the-Right-Catamaran-1.webp"
+          alt="Catamaran">
+        <div class="boat-info">
+          <h3>Catamaran</h3>
+          <p>📍 Twin Hull Dock<br>• Stable Ride<br>• Large Deck<br>• Party Friend</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://www.madisonboats.com/wp-content/uploads/Marshall-Boats-Location.jpg" alt="Pontoon Boat">
+        <div class="boat-info">
+          <h3>Pontoon Boat</h3>
+          <p>📍Lake View Jetty<br>• Flat Surface<br>• Family Use<br>• Safe Ride </p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://miamicharters.com/wp-content/uploads/2019/11/1-SPEED-YACHTS-1.jpg" alt="Offshore Speed Boat">
+        <div class="boat-info">
+          <h3>Offshore Speed Boat</h3>
+          <p> 📍 Ocean Racing Dock<br>• Extreme Speed<br>• Safety Gear<br> • Sport Design</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://bigmarlinpuntacana.com/wp-content/uploads/2023/03/luhrs-fishing-boat-charter01.jpg"
+          alt="Deep Sea Fishing Boat">
+        <div class="boat-info">
+          <h3>Deep Sea Fishing Boat</h3>
+          <p>📍 Fisherman Harbor<br>• Fish Finder<br> • GPS System<br>• Storage Deck </p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://traveldanang.org/wp-content/uploads/dragn-boat-floating-restaurant-1.jpg"
+          alt="Floating Restaurant Boat">
+        <div class="boat-info">
+          <h3>Floating Restaurant Boat</h3>
+          <p> 📍 Riverfront Dock<br> • Dining Area<br> • Kitchen<br> • Family Seating</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/13/17/fa/02.jpg"
+          alt="Sunset Cruise Boat">
+        <div class="boat-info">
+          <h3>Sunset Cruise Boat</h3>
+          <p>📍 Sunset Point Marina<br> • Romantic View<br> • Open Deck<br> • Soft Music </p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://robbreport.com/wp-content/uploads/2022/04/5.-NAVIER-FOILING-DAYLIGHT-1.jpg?w=800"
+          alt="Electric Boat">
+        <div class="boat-info">
+          <h3>Electric Boat</h3>
+          <p>📍 Green Marina<br>• Eco Friendly<br> • Silent Ride<br> • Low Cost </p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img
+          src="https://media.licdn.com/dms/image/v2/D4D12AQFI41plDFxAaw/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1706098745209?e=2147483647&v=beta&t=I8DOx-B4lpBIBkx0igT3nKnlPp9kK2ptrFcJ8Jr2KPA"
+          alt="Rescue Lifeboat">
+        <div class="boat-info">
+          <h3>Rescue Lifeboat</h3>
+          <p> 📍 Emergency Dock<br> • Medical Kit<br>• Fast Response<br> • Strong Body</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/07/USCG_response_boat_medium_45607_Yorktown.jpg"
+          alt="Coast Guard Boat">
+        <div class="boat-info">
+          <h3>Coast Guard Boat</h3>
+          <p>📍 Security Marina<br> • Surveillance<br>• Radio Control<br> • Heavy Duty</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://yacht-zoo.com/wp-content/uploads/2019/12/m-y-dynasty-sunrise-11.jpg"
+          alt="Private Charter Yacht">
+        <div class="boat-info">
+          <h3>Private Charter Yacht</h3>
+          <p>📍 Private Dock<br>• Luxury Seating<br> • Crew Service<br> • Privacy </p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img
+          src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/df/17/16/canal-cruise-sin-amsterdam.jpg?w=1200&h=-1&s=1"
+          alt="Canal Tour Boat">
+        <div class="boat-info">
+          <h3>Canal Tour Boat</h3>
+          <p>📍 Canal Side Dock<br> • City Tour<br> • Guide Available<br> • Safe Ride </p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://www.chicagowatertaxi.com/wp-content/uploads/2019/03/20150813-IMG_0357-1.jpg" alt="River Taxi">
+        <div class="boat-info">
+          <h3>River Taxi</h3>
+          <p>📍 River Transport Hub<br> • Quick Travel<br>• Daily Service<br> • Covered Seating</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img
+          src="https://thumbs.dreamstime.com/b/open-pool-last-deck-cruise-ship-area-used-also-outdoor-parties-loud-music-picture-msc-fantasia-109603596.jpg"
+          alt="Open Deck Cruise">
+        <div class="boat-info">
+          <h3>Open Deck Cruise</h3>
+          <p> 📍 Cruise Terminal<br> • Open Air Deck<br> • Sea View<br> • Group Friendly</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://funboattours.com/wp-content/uploads/2022/11/dolphin4.jpg" alt="Dolphin Watching Boat">
+        <div class="boat-info">
+          <h3>Dolphin Watching Boat</h3>
+          <p> 📍 Wildlife Harbor<br> • Nature Tour<br> • Safe Viewing<br> • Guide Support </p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://www.shearwatervictoriafalls.com/wp-content/uploads/2020/03/Shearwater-Jetboat-main.jpg"
+          alt="Jet Boat">
+        <div class="boat-info">
+          <h3>Adventure Jet Boat</h3>
+          <p>📍 Adventure Dock<br>• High Power Jet<br>• Sharp Turns<br> • Thrill Ride</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img
+          src="https://www.shouf.io/cdn/shop/files/muscat-traditional-dhow-boat-sunset-cruise-with-refreshments-167827.jpg?v=1744347923"
+          alt="Traditional Dhow">
+        <div class="boat-info">
+          <h3>Traditional Dhow</h3>
+          <p> 📍 Heritage Harbor<br> • Cultural Design<br> • Wooden Body<br>• Calm Ride</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://www.racewinningbrands.com/wp-content/uploads/2024/01/CO9A0670-1-scaled.jpg" alt="Racing Boat">
+        <div class="boat-info">
+          <h3>Racing Boat</h3>
+          <p>📍 Racing Marina<br>• High Performance<br> • Sport Engine<br> • Lightweight
+          </p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img
+          src="https://sika.scene7.com/is/image/sika/glo-motor-boat-ship-marine-yacht:16-9?wid=1920&hei=1080&fit=crop%2C1"
+          alt="Leisure Boat">
+        <div class="boat-info">
+          <h3>Leisure Boat</h3>
+          <p> 📍 Family Dock<br> • Relax Ride<br> • Easy Control<br> • Safe Design </p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img
+          src="https://www.bmt.org/media/2655/offshore-energy-banner.jpg?anchor=center&mode=crop&width=1920&height=800&rnd=132813923550000000"
+          alt="Crew Transfer Vessel">
+        <div class="boat-info">
+          <h3>Crew Transfer Vessel</h3>
+          <p> 📍 Service Port<br> • Staff Transport<br> • Strong Hull<br> • Reliable Engine</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://www.rssailing.com/wp-content/uploads/2021/01/RSQuest_Asymmetric.jpg" alt="Training Sail Boat">
+        <div class="boat-info">
+          <h3>Training Sail Boat</h3>
+          <p> 📍 Sailing Club Dock<br> • Training Purpose<br> • Safety Support<br> • Instructor </p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img
+          src="https://thumbs.dreamstime.com/b/traditional-old-wooden-sailing-boat-russian-samara-russia-may-heritage-village-traditional-old-wooden-sailing-boat-78871151.jpg"
+          alt="Heritage Wooden Boat">
+        <div class="boat-info">
+          <h3>Heritage Wooden Boat</h3>
+          <p> 📍 Old Port Marina<br> • Classic Style<br> • Handcrafted<br> • Photography </p>
+        </div>
+      </div>
+
+      <div class="boat-card">
+        <img src="https://www.tuvie.com/wp-content/uploads/electra-hydrofoil-ferry-concept1.jpg" alt="Hydrofoil Boat">
+        <div class="boat-info">
+          <h3>Hydrofoil Boat</h3>
+          <p>📍 Speed Marina<br>• High Speed<br>• Lift above water<br>• Racing Design</p>
+        </div>
+      </div>
+
+      <div class="boat-card">
+        <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0f/1d/9b/61.jpg"
+          alt="Icebreaker Ship">
+        <div class="boat-info">
+          <h3>Icebreaker Ship</h3>
+          <p>📍 Polar Harbor<br>• Thick Hull<br>• Frozen Waters<br>• Heavy Duty Engine</p>
+        </div>
+      </div>
+
+      <div class="boat-card">
+        <img src="https://www.yachtingnews.com/wp-content/uploads/2016/03/montenegro-porto.jpg" alt="">
+        <div class="boat-info">
+          <h3>Harbor Yacht</h3>
+          <p>📍 Hong Kong<br>• Smooth Sailing<br>• GPS System<br>• Safety Gear</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://cdn.northropandjohnson.com/uploads/NITA-K-II-1.jpg?w=1920&h=1080&fit=crop"
+          alt="Below Deck Adventure Yacht">
+        <div class="boat-info">
+          <h3>Below Deck Adventure Yacht</h3>
+          <p>📍 Caribbean<br> • like E-foils, jet skis<br> • 30 Guest Cabins<br> • Watersports & Jet Skis<br>•
+            Long-Range Expedition</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img
+          src="https://cdn.boatinternational.com/convert/listing/2023/01/b82defe0-9038-11ed-af00-9f6e2a9c4532-FAMILY_superyacht_for_sale_charter_01.jpg/r%5Bwidth%5D=1920/b82defe0-9038-11ed-af00-9f6e2a9c4532-FAMILY_superyacht_for_sale_charter_01.jpg"
+          alt="Family Adventure Yacht">
+        <div class="boat-info">
+          <h3>Family Adventure Yacht</h3>
+          <p>📍 Bahamas<br>• 4 Crew Members<br> • 25 Guest Cabins<br>• Kayaks & Paddleboards<br>• Long-Range
+            Cruising</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img
+          src="https://yatcowpmedialibrary.nyc3.cdn.digitaloceanspaces.com/wp-content/uploads/2025/04/yacht-with-helipad-3.jpg"
+          alt="Heli Yacht">
+        <div class="boat-info">
+          <h3>Heli Yacht</h3>
+          <p>📍 Thailand<br> • retractable helipads <br> • specialized lighting <br> • Helicopter Pad & Jet
+            Skis</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://d2qh54gyqi6t5f.cloudfront.net/images/misc/2030/superyacht.jpg" alt="Mega Yacht">
+        <div class="boat-info">
+          <h3>Mega Yacht</h3>
+          <p>📍 Monaco<br> • 10 Crew<br> • 50 Guest Cabins<br> • Luxury Amenities & Skis
+          <p>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="boat-card">
+        <img src="https://www.antarcticacruises.com/wp-content/uploads/2024/01/OE-Quark.jpg" alt="Ocean Explorer">
+        <div class="boat-info">
+          <h3>Ocean Explorer</h3>
+          <p>📍 Pacific <br>• most with balconies<br> • focus on sustainability<br> • Long-Range & Watersports
+          </p>
+        </div>
+      </div>
+
+      <div class="boat-card">
+        <img src="https://masterliveaboards.com/wp-content/uploads/2023/08/blue-horizon-liveaboard-2024-02.jpg"
+          alt="Blue Horizon">
+        <div class="boat-info">
+          <h3>Blue Horizon</h3>
+          <p>📍 Indian Ocean<br>• luxury cabins<br>•26 guests<br>• Snorkeling & Jet Ski</p>
+        </div>
+      </div>
+      <div class="boat-card">
+        <img src="https://ae01.alicdn.com/kf/Sfdefd96d77254d5a814886ddeb5d7f21b.jpg" alt="Island Breeze">
+        <div class="boat-info">
+          <h3>Island Breeze</h3>
+          <p>📍 Fiji<br>• 5 Crew<br>• 84ft, Caterpillar engines<br>• Kayaking & Fishing</p>
+        </div>
+      </div>
+
+  </section>
+
+  <footer class="of-footer">
+    <div class="of-footer-wrap">
+
+      <div class="of-footer-block">
+        <h2 class="of-footer-title">OCEAN FLEET</h2>
+        <p class="of-footer-text">
+          Ocean Fleet delivers premium maritime experiences with world-class vessels,
+          trusted crew, and unforgettable journeys across the seas.
+        </p>
+      </div>
+
+      <div class="of-footer-block">
+        <h2 class="of-footer-title">QUICK LINKS</h2>
+        <ul class="of-footer-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about_us.html">About Us</a></li>
+          <li><a href="./gallery.html">Our Fleet</a></li>
+          <li><a href="./contact_us.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="of-footer-block">
+        <h2 class="of-footer-title">NEWSLETTER</h2>
+        <p class="of-footer-text">
+          Subscribe for latest fleet updates and exclusive offers.
+        </p>
+        <div class="of-subscribe">
+          <input type="email" placeholder="Enter your email">
+          <button>Subscribe</button>
+        </div>
+      </div>
+
     </div>
+  </footer>
+
+  <div class="of-footer-bottom">
+    © 2025 Ocean Fleet. All Rights Reserved.
   </div>
 
-  <!-- 8 -->
-  <div class="boat-card">
-    <img src="https://www.antarcticacruises.com/wp-content/uploads/2024/01/OE-Quark.jpg" alt="Ocean Explorer">
-    <div class="boat-info">
-      <h3>Ocean Explorer</h3> <p>📍 Pacific <br>• most with balconies<br>  • focus on sustainability<br> • Long-Range & Watersports</p>
-    </div>
-  </div>
 
-<div class="boat-card">
-  <img src="https://masterliveaboards.com/wp-content/uploads/2023/08/blue-horizon-liveaboard-2024-02.jpg" alt="Blue Horizon">
-  <div class="boat-info">
-    <h3>Blue Horizon</h3>
-    <p>📍 Indian Ocean<br>• luxury cabins<br>•26 guests<br>• Snorkeling & Jet Ski</p>
-  </div>
-</div>
-<div class="boat-card">
-  <img src="https://ae01.alicdn.com/kf/Sfdefd96d77254d5a814886ddeb5d7f21b.jpg" alt="Island Breeze">
-  <div class="boat-info">
-    <h3>Island Breeze</h3>
-    <p>📍 Fiji<br>• 5 Crew<br>• 84ft, Caterpillar engines<br>• Kayaking & Fishing</p>
-  </div>
-</div>
-
-</section>
+  <script>
+    AOS.init({
+      duration: 1000,   // animation speed (ms)
+      once: true        // ek dafa hi chale
+    });
+  </script>
 </body>
+
 </html>
