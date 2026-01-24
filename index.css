@@ -455,6 +455,9 @@ body {
   .nav-btn {
     margin: 15px 0;
   }
+  .login-modal-content{
+    width: 90%;
+  }
 }
 
 /* =========================
