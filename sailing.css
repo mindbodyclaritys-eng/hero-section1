@@ -202,6 +202,7 @@
 
 #detailsOverlay .overlay-content {
   background: #fff;
+  color: black;
   padding: 30px;
   position: relative;
   text-align: center;
@@ -358,8 +359,10 @@
   background: rgba(0, 0, 0, 0.6);
 }
 
-.modal-content {
+.popular-modal-content {
   background: #fff;
+  width: 50%;
+  color: black;
   width: 350px;
   padding: 20px;
   border-radius: 12px;
@@ -764,6 +767,9 @@
 
   .card-img-top {
     height: 150px;
+  }
+  .popular-modal-content{
+    width: 90%;
   }
 }
 
