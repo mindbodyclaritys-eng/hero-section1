@@ -37,7 +37,7 @@ const cartCard = document.getElementById('cartCard');
 cartCard.style.display = 'none';
 userIcon.addEventListener('click', (e) => {
      e.stopPropagation();
-    cartCard.style.display = cartCard.style.display === 'none' ? 'none' : 'none';
+    cartCard.style.display = cartCard.style.display === 'none' ? 'block' : 'none';
 });
 window.addEventListener('click', (e) => {
     if (!userIcon.contains(e.target) && !cartCard.contains(e.target)) cartCard.style.display = 'none';
