@@ -195,7 +195,8 @@ body {
 /* ONLY cart area */
 .nav-actions .fleet-card {
   width: 200px;
-  right: -10px;
+  top: 55px;
+  right: -49px;
   position: absolute;
   background: rgba(255, 255, 255, 0.12);
   border-radius: 18px;
