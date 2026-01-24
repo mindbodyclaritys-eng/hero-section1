@@ -203,9 +203,6 @@
 #detailsOverlay .overlay-content {
   background: #fff;
   padding: 30px;
-  max-width: 600px;
-  width: 90%;
-  border-radius: 10px;
   position: relative;
   text-align: center;
 }
