@@ -57,8 +57,7 @@ const luxuryContainer = document.getElementById("fleetCards");
 luxuryShips.forEach(ship => {
   const card = document.createElement("div");
   card.className = "fleet-card";
-  card.setAttribute("data-aos", "fade-up");
-card.setAttribute("data-aos-delay", index * 120);
+
 
 
   card.innerHTML = `
