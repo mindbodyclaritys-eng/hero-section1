@@ -37,7 +37,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 30px;
-    position: relative;
+    
 }
 
 /* ================= FLEET CARD ================= */
@@ -48,7 +48,6 @@ body {
     cursor: pointer;
     transition: 0.4s;
     backdrop-filter: blur(10px);
-    position: relative;
 }
 
 .fleet-card:hover {
