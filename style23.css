@@ -119,24 +119,7 @@
     margin-bottom: 15px;
 }
 
-/* ================= BUTTON ================= */
-.yacht-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: linear-gradient(135deg, #00d8ff, #007bb3);
-    color: #02121f;
-    font-weight: 700;
-    border-radius: 30px;
-    text-decoration: none;
-    transition: 0.4s;
-}
 
-.yacht-btn:hover {
-    background: linear-gradient(135deg, gold, #ffcf40);
-    color: #111;
-    transform: translateY(-3px);
-}
 
 /* ================= TABLET ================= */
 @media (max-width: 992px) {
