@@ -85,3 +85,7 @@ arrowBtn.addEventListener('click', () => {
 const navLogoImg = document.querySelector('.logo-img')
 navLogoImg.className = 'logo-img display-none'
 
+  document.getElementById("bookCruiseBtn").addEventListener("click", function (e) {
+    e.preventDefault();
+    window.location.href = "booking.html";
+  });
