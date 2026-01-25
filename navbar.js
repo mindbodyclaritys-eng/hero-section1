@@ -89,3 +89,27 @@ navLogoImg.className = 'logo-img display-none'
     e.preventDefault();
     window.location.href = "booking.html";
   });
+
+//   subscribe operation
+
+   document.getElementById("subscribeBtn").addEventListener("click", function () {
+    const emailInput = document.getElementById("subscribeEmail");
+    const email = emailInput.value.trim();
+
+    // Empty check
+    if (!email) {
+      alert("Please enter your email");
+      return;
+    }
+
+    // Email validation
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address");
+      return;
+    }
+
+    // Success
+    alert("Thank you for subscribing!");
+    emailInput.value = "";
+  });
