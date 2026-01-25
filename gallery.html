@@ -573,6 +573,13 @@
 
 
   <script>
+
+    document.querySelectorAll(".book-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        window.location.href = "booking.html";
+      });
+    });
+    
     AOS.init({
       duration: 1000,   // animation speed (ms)
       once: true        // ek dafa hi chale
